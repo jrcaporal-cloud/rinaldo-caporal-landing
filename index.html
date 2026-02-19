@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rinaldo Caporal — Alta Performance Otimizada</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,400;0,700;0,900;1,700&family=IBM+Plex+Mono:wght@300;400;500;600&family=Fraunces:ital,opsz,wght@1,9..144,300;1,9..144,700&display=swap" rel="stylesheet">
+
+<style>
+/* ═══════════════════════════════════════
+   ROOT & TOKENS (DARK PREMIUM THEME)
+═══════════════════════════════════════ */
+:root {
+  --bg: #050505;
+  --surface: #121212;
+  --surface-hover: #1A1A1A;
+  --border: rgba(255, 255, 255, 0.08);
+  --text-main: #F4F4F5;
+  --text-muted: #A1A1AA;
+  --accent: #E53935;
+  --accent-glow: rgba(229, 57, 53, 0.2);
+  --gold: #D4AF37;
+  
+  --mono: 'IBM Plex Mono', monospace;
+  --cond: 'Barlow Condensed', sans-serif;
+  --serif: 'Fraunces', serif;
+  
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; background: var(--bg); }
+body {
+  color: var(--text-main); font-family: var(--mono); font-weight: 300;
+  overflow-x: hidden; -webkit-font-smoothing: antialiased;
+}
+a { text-decoration: none; color: inherit; }
+img { display: block; max-width: 100%; height: auto; }
+
+/* ═══════════════════════════════════════
+   GLOBAL UI ELEMENTS
+═══════════════════════════════════════ */
+.noise-overlay {
+  position: fixed; inset: 0; z-index: 9999; pointer-events: none; opacity: 0.03;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+}
+
+.btn-primary {
+  display: inline-flex; align-items: center; justify-content: center; gap: 12px;
+  background: var(--accent); color: #fff;
+  padding: 16px 32px; font-family: var(--mono); font-size: 11px;
+  letter-spacing: 2px; text-transform: uppercase; font-weight: 500;
+  border: 1px solid var(--accent); position: relative; overflow: hidden;
+  transition: all 0.3s var(--ease-out);
+}
+.btn-primary:hover { background: transparent; box-shadow: 0 0 20px var(--accent-glow); }
+.btn-primary::before {
+  content: ''; position: absolute; inset: 0; background: #fff; transform: scaleX(0);
+  transform-origin: right; transition: transform 0.4s var(--ease-out); z-index: -1;
+}
+.btn-primary:hover::before { transform: scaleX(1); transform-origin: left; }
+.btn-primary:hover { color: var(--bg); border-color: #fff; }
+
+.section-title {
+  font-family: var(--cond); font-size: clamp(48px, 8vw, 96px);
+  font-weight: 900; text-transform: uppercase; line-height: 0.9;
+  letter-spacing: -1px; margin-bottom: 48px;
+}
+.section-title em { font-family: var(--serif); font-style: italic; font-weight: 300; font-size: 0.5em; color: var(--accent); display: block; margin-bottom: 8px;}
+
+/* ═══════════════════════════════════════
+   NAVBAR (GLASSMORPHISM)
+═══════════════════════════════════════ */
+nav {
+  position: fixed; top: 0; width: 100%; z-index: 100;
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 20px 40px; background: rgba(5, 5, 5, 0.7);
+  backdrop-filter: blur(12px); border-bottom: 1px solid var(--border);
+}
+.logo { font-family: var(--cond); font-weight: 900; font-size: 18px; letter-spacing: 2px; text-transform: uppercase; }
+.logo span { color: var(--accent); }
+.nav-links { display: flex; gap: 32px; }
+.nav-links a { font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: var(--text-muted); transition: color 0.3s; }
+.nav-links a:hover { color: var(--text-main); }
+
+/* ═══════════════════════════════════════
+   HERO SECTION
+═══════════════════════════════════════ */
+.hero {
+  min-height: 100vh; display: grid; grid-template-columns: 1fr 1fr;
+  border-bottom: 1px solid var(--border); padding-top: 70px;
+}
+.hero-content {
+  padding: 8vw 6vw; display: flex; flex-direction: column; justify-content: center;
+  border-right: 1px solid var(--border);
+}
+.tagline {
+  font-family: var(--mono); font-size: 10px; color: var(--accent);
+  letter-spacing: 3px; text-transform: uppercase; margin-bottom: 24px;
+  display: flex; align-items: center; gap: 12px;
+}
+.tagline::before { content: ''; width: 30px; height: 1px; background: var(--accent); }
+.hero h1 {
+  font-family: var(--cond); font-size: clamp(64px, 10vw, 140px);
+  font-weight: 900; line-height: 0.85; text-transform: uppercase;
+  margin-bottom: 32px; letter-spacing: -2px;
+}
+.hero h1 span { color: transparent; -webkit-text-stroke: 1px var(--text-main); }
+.hero p {
+  font-size: 15px; line-height: 1.8; color: var(--text-muted);
+  max-width: 480px; margin-bottom: 48px; text-wrap: balance;
+}
+.hero-visual {
+  position: relative; background: var(--surface); overflow: hidden;
+}
+.hero-visual img {
+  width: 100%; height: 100%; object-fit: cover;
+  filter: grayscale(100%) contrast(1.2) brightness(0.8);
+  mix-blend-mode: luminosity; transition: transform 3s ease;
+}
+.hero-visual:hover img { transform: scale(1.05); }
+.hero-visual::after {
+  content: ''; position: absolute; inset: 0;
+  background: linear-gradient(45deg, rgba(229,57,53,0.1), transparent);
+}
+
+/* ═══════════════════════════════════════
+   BENTO BOX METHODOLOGY
+═══════════════════════════════════════ */
+.bento-section { padding: 8vw 6vw; border-bottom: 1px solid var(--border); }
+.bento-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: 280px; gap: 1px; background: var(--border);
+  border: 1px solid var(--border);
+}
+.bento-card {
+  background: var(--surface); padding: 40px; position: relative;
+  display: flex; flex-direction: column; justify-content: space-between;
+  transition: background 0.3s;
+}
+.bento-card:hover { background: var(--surface-hover); }
+.bento-card.large { grid-column: span 2; grid-row: span 2; }
+.bento-card.tall { grid-row: span 2; }
+
+.bento-number {
+  font-family: var(--cond); font-size: 64px; font-weight: 900;
+  color: rgba(255,255,255,0.05); position: absolute; top: 20px; right: 30px;
+  line-height: 1; transition: color 0.3s;
+}
+.bento-card:hover .bento-number { color: var(--accent-glow); }
+.bento-title { font-family: var(--cond); font-size: 32px; font-weight: 800; text-transform: uppercase; }
+.bento-desc { font-size: 13px; color: var(--text-muted); line-height: 1.6; }
+
+/* ═══════════════════════════════════════
+   PRICING
+═══════════════════════════════════════ */
+.pricing-section { padding: 8vw 6vw; }
+.pricing-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+.plan-card {
+  border: 1px solid var(--border); background: var(--surface); padding: 48px 40px;
+  display: flex; flex-direction: column; transition: transform 0.4s var(--ease-out);
+}
+.plan-card:hover { transform: translateY(-8px); border-color: rgba(255,255,255,0.2); }
+.plan-card.vip { border-color: var(--accent); background: linear-gradient(180deg, rgba(229,57,53,0.05) 0%, var(--bg) 100%); }
+.plan-name { font-family: var(--mono); font-size: 12px; color: var(--accent); letter-spacing: 2px; text-transform: uppercase; margin-bottom: 16px; }
+.plan-card.vip .plan-name { color: var(--gold); }
+.plan-price { font-family: var(--cond); font-size: 64px; font-weight: 900; line-height: 1; margin-bottom: 32px; }
+.plan-price span { font-size: 24px; color: var(--text-muted); }
+.plan-features { list-style: none; margin-bottom: 48px; flex-grow: 1; }
+.plan-features li {
+  font-size: 13px; color: var(--text-muted); padding: 12px 0;
+  border-bottom: 1px solid var(--border); display: flex; gap: 12px;
+}
+.plan-features li::before { content: '→'; color: var(--accent); }
+
+/* ═══════════════════════════════════════
+   SCROLL REVEAL ANIMATIONS
+═══════════════════════════════════════ */
+.reveal { opacity: 0; transform: translateY(40px); transition: all 0.8s var(--ease-out); }
+.reveal.active { opacity: 1; transform: translateY(0); }
+
+/* ═══════════════════════════════════════
+   RESPONSIVE
+═══════════════════════════════════════ */
+@media(max-width: 1024px) {
+  .hero { grid-template-columns: 1fr; }
+  .hero-visual { height: 50vh; order: -1; }
+  .bento-grid { grid-template-columns: 1fr 1fr; }
+  .bento-card.large { grid-column: span 2; }
+}
+@media(max-width: 768px) {
+  nav { padding: 16px 20px; }
+  .nav-links { display: none; }
+  .bento-grid { grid-template-columns: 1fr; display: flex; flex-direction: column; }
+  .pricing-grid { grid-template-columns: 1fr; }
+  .plan-card { padding: 32px 24px; }
+}
+</style>
+</head>
+<body>
+
+<div class="noise-overlay"></div>
+
+<nav>
+  <div class="logo">Rinaldo Caporal<span>.</span></div>
+  <div class="nav-links">
+    <a href="#metodo">Método</a>
+    <a href="#bio">Health Compass</a>
+    <a href="#planos">Planos</a>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="hero-content">
+    <div class="tagline reveal">Especialista em Composição Corporal</div>
+    <h1 class="reveal" style="transition-delay: 0.1s;">A Ciência dos<br><span>Campeões.</span></h1>
+    <p class="reveal" style="transition-delay: 0.2s;">Para pessoas entre 30 e 50 anos que têm agenda cheia e tolerância zero para métodos baseados em achismo. Um protocolo matemático e adaptável para sua fisiologia.</p>
+    <div class="reveal" style="transition-delay: 0.3s;">
+      <a href="#" class="btn-primary">Iniciar Diagnóstico</a>
+    </div>
+  </div>
+  <div class="hero-visual">
+    <img src="https://jrcaporal-cloud.github.io/curso-antropometria/projetos/assessoria-nutricional/v2/rinaldo-terno.png" alt="Rinaldo Caporal">
+  </div>
+</section>
+
+<section id="metodo" class="bento-section">
+  <h2 class="section-title reveal"><em>O Sistema</em><br>Não é Dieta, É engenharia.</h2>
+  
+  <div class="bento-grid">
+    <div class="bento-card large reveal">
+      <div class="bento-number">01</div>
+      <div>
+        <h3 class="bento-title">Previsibilidade Matemática</h3>
+        <p class="bento-desc"><br>Convertendo a incerteza do metabolismo em dados precisos. Integração de rotina, treino (LPO, Combate ou Hipertrofia) e descanso estruturados para garantir que você saiba exatamente quando o resultado vai chegar.</p>
+      </div>
+    </div>
+    <div class="bento-card reveal">
+      <div class="bento-number">02</div>
+      <div>
+        <h3 class="bento-title">Tecnologia Integrada</h3>
+        <p class="bento-desc"><br>Acompanhamento guiado pelo <strong>Health Compass</strong>. Os dados da sua semana ditam os ajustes da próxima, eliminando o "platô" antes dele acontecer.</p>
+      </div>
+    </div>
+    <div class="bento-card reveal">
+      <div class="bento-number">03</div>
+      <div>
+        <h3 class="bento-title">ISAK Nível 2</h3>
+        <p class="bento-desc"><br>Mensuração de padrão internacional. Esqueça balanças de bioimpedância falhas. Acompanhamento rigoroso da dobra cutânea e simetria muscular.</p>
+      </div>
+    </div>
+    <div class="bento-card tall reveal">
+      <div class="bento-number">04</div>
+      <div>
+        <h3 class="bento-title">Esportes & Alto Rendimento</h3>
+        <p class="bento-desc"><br>O mesmo rigor aplicado ao corte de peso de atletas do UFC e da IFBJJ, adaptado à realidade da sua rotina corporativa.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="planos" class="pricing-section">
+  <h2 class="section-title reveal"><em>Seu Próximo Passo</em><br>Planos de Elite.</h2>
+  
+  <div class="pricing-grid">
+    <div class="plan-card reveal">
+      <div class="plan-name">Diagnóstico Start</div>
+      <div class="plan-price"><span>R$</span>650</div>
+      <ul class="plan-features">
+        <li>Consulta de mapeamento profundo (90 min)</li>
+        <li>1 Mês de acompanhamento inicial</li>
+        <li>Acesso ao Health Compass</li>
+        <li>Ajustes quinzenais de rotina</li>
+      </ul>
+      <a href="#" class="btn-primary" style="width: 100%; border-color: var(--border); background: transparent; color: var(--text-main);">Verificar Vagas</a>
+    </div>
+
+    <div class="plan-card vip reveal" style="transition-delay: 0.1s;">
+      <div class="plan-name">Semestral VIP (Recomendado)</div>
+      <div class="plan-price" style="color: var(--accent);"><span>R$</span>2.350</div>
+      <ul class="plan-features">
+        <li style="color: var(--text-main); font-weight: 500;">Transformação Permanente</li>
+        <li>3 consultas presenciais ou online</li>
+        <li>Acompanhamento e ajuste semanal rigoroso</li>
+        <li>Calls de emergência On-Demand</li>
+        <li>Bônus de renovação vitalício</li>
+      </ul>
+      <a href="#" class="btn-primary" style="width: 100%;">Aplicar para o VIP</a>
+    </div>
+
+    <div class="plan-card reveal" style="transition-delay: 0.2s;">
+      <div class="plan-name">Trimestral</div>
+      <div class="plan-price"><span>R$</span>1.300</div>
+      <ul class="plan-features">
+        <li>2 consultas de acompanhamento</li>
+        <li>Revisão semanal na plataforma</li>
+        <li>Suporte contínuo para ajustes de treino</li>
+        <li>Economia na adesão via Pix</li>
+      </ul>
+      <a href="#" class="btn-primary" style="width: 100%; border-color: var(--border); background: transparent; color: var(--text-main);">Verificar Vagas</a>
+    </div>
+  </div>
+</section>
+
+<script>
+  // Observador de Intersecção para Animações de Scroll fluidas
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('active');
+      }
+    });
+  }, { threshold: 0.15, rootMargin: "0px 0px -50px 0px" });
+
+  document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
+</script>
+</body>
+</html>
