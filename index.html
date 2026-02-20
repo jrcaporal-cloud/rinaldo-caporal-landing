@@ -3,317 +3,2655 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Rinaldo Caporal — Alta Performance Otimizada</title>
+<title>Rinaldo Caporal — Nutricionista de Alta Performance | Maceió, AL</title>
+<meta name="description" content="Nutricionista há 10 anos, cofundador do Health Compass. Aplico a ciência dos campeões mundiais à rotina de quem tem entre 30 e 50 anos e quer resultado real — sem achismo, sem improviso.">
+<meta name="keywords" content="nutricionista alta performance, nutricionista maceió, nutricionista alagoas, acompanhamento nutricional, nutrição para adultos, Rinaldo Caporal">
+<meta property="og:title" content="Rinaldo Caporal — Nutricionista de Alta Performance">
+<meta property="og:description" content="A mesma ciência dos campeões mundiais aplicada à sua rotina. Atendo adultos de 30 a 50 anos que querem resultado, não promessa.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.rinaldocaporal.com.br">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://www.rinaldocaporal.com.br">
+<meta name="robots" content="index, follow">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Rinaldo Caporal",
+  "jobTitle": "Nutricionista Esportivo",
+  "description": "Nutricionista com 10 anos de experiência, especializado em alta performance e composição corporal para adultos de 30 a 50 anos.",
+  "url": "https://www.rinaldocaporal.com.br",
+  "telephone": "+5582988458845",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Maceió",
+    "addressRegion": "AL",
+    "addressCountry": "BR"
+  },
+  "sameAs": ["https://wa.me/5582988458845"]
+}
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,400;0,700;0,900;1,700&family=IBM+Plex+Mono:wght@300;400;500;600&family=Fraunces:ital,opsz,wght@1,9..144,300;1,9..144,700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,300;0,400;0,600;0,700;0,800;0,900;1,700;1,900&family=IBM+Plex+Mono:wght@300;400;500&family=Fraunces:ital,wght@0,300;1,300;1,700&display=swap&font-display=swap" rel="stylesheet">
 
 <style>
 /* ═══════════════════════════════════════
-   ROOT & TOKENS (DARK PREMIUM THEME)
+   RESET & ROOT
 ═══════════════════════════════════════ */
+*, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
 :root {
-  --bg: #050505;
-  --surface: #121212;
-  --surface-hover: #1A1A1A;
-  --border: rgba(255, 255, 255, 0.08);
-  --text-main: #F4F4F5;
-  --text-muted: #A1A1AA;
-  --accent: #E53935;
-  --accent-glow: rgba(229, 57, 53, 0.2);
-  --gold: #D4AF37;
-  
-  --mono: 'IBM Plex Mono', monospace;
-  --cond: 'Barlow Condensed', sans-serif;
+  --ink:   #0D0D0D;
+  --paper: #F0EDE6;
+  --cream: #E8E3D8;
+  --red:   #C0341D;
+  --red2:  #E8421F;
+  --mono:  'IBM Plex Mono', monospace;
+  --cond:  'Barlow Condensed', sans-serif;
   --serif: 'Fraunces', serif;
-  
-  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
 }
-
-*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-html { scroll-behavior: smooth; background: var(--bg); }
+html { scroll-behavior: smooth; font-size: 16px; }
 body {
-  color: var(--text-main); font-family: var(--mono); font-weight: 300;
-  overflow-x: hidden; -webkit-font-smoothing: antialiased;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--mono);
+  font-weight: 300;
+  overflow-x: hidden;
+  cursor: none;
 }
-a { text-decoration: none; color: inherit; }
-img { display: block; max-width: 100%; height: auto; }
+a { color: inherit; text-decoration: none; }
+img { display: block; max-width: 100%; }
+
+/* cursor — see responsive block below */
 
 /* ═══════════════════════════════════════
-   GLOBAL UI ELEMENTS
+   GRID OVERLAY
 ═══════════════════════════════════════ */
-.noise-overlay {
-  position: fixed; inset: 0; z-index: 9999; pointer-events: none; opacity: 0.03;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+.grid-overlay {
+  position: fixed; inset:0; pointer-events:none; z-index:0;
+  background-image:
+    linear-gradient(rgba(13,13,13,.045) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(13,13,13,.045) 1px, transparent 1px);
+  background-size: 60px 60px;
 }
-
-.btn-primary {
-  display: inline-flex; align-items: center; justify-content: center; gap: 12px;
-  background: var(--accent); color: #fff;
-  padding: 16px 32px; font-family: var(--mono); font-size: 11px;
-  letter-spacing: 2px; text-transform: uppercase; font-weight: 500;
-  border: 1px solid var(--accent); position: relative; overflow: hidden;
-  transition: all 0.3s var(--ease-out);
-}
-.btn-primary:hover { background: transparent; box-shadow: 0 0 20px var(--accent-glow); }
-.btn-primary::before {
-  content: ''; position: absolute; inset: 0; background: #fff; transform: scaleX(0);
-  transform-origin: right; transition: transform 0.4s var(--ease-out); z-index: -1;
-}
-.btn-primary:hover::before { transform: scaleX(1); transform-origin: left; }
-.btn-primary:hover { color: var(--bg); border-color: #fff; }
-
-.section-title {
-  font-family: var(--cond); font-size: clamp(48px, 8vw, 96px);
-  font-weight: 900; text-transform: uppercase; line-height: 0.9;
-  letter-spacing: -1px; margin-bottom: 48px;
-}
-.section-title em { font-family: var(--serif); font-style: italic; font-weight: 300; font-size: 0.5em; color: var(--accent); display: block; margin-bottom: 8px;}
 
 /* ═══════════════════════════════════════
-   NAVBAR (GLASSMORPHISM)
+   NAV
 ═══════════════════════════════════════ */
 nav {
-  position: fixed; top: 0; width: 100%; z-index: 100;
-  display: flex; justify-content: space-between; align-items: center;
-  padding: 20px 40px; background: rgba(5, 5, 5, 0.7);
-  backdrop-filter: blur(12px); border-bottom: 1px solid var(--border);
+  position: fixed; top:0; left:0; right:0; z-index:200;
+  display: flex; align-items:stretch;
+  border-bottom: 1.5px solid var(--ink);
+  background: var(--paper);
+  height: 52px;
 }
-.logo { font-family: var(--cond); font-weight: 900; font-size: 18px; letter-spacing: 2px; text-transform: uppercase; }
-.logo span { color: var(--accent); }
-.nav-links { display: flex; gap: 32px; }
-.nav-links a { font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: var(--text-muted); transition: color 0.3s; }
-.nav-links a:hover { color: var(--text-main); }
+.nav-brand {
+  display:flex; align-items:center;
+  padding: 0 28px;
+  font-family: var(--cond);
+  font-weight: 900;
+  font-size: 15px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  border-right: 1.5px solid var(--ink);
+  flex-shrink:0;
+}
+.nav-brand sup {
+  font-family: var(--mono);
+  font-size: 8px;
+  font-weight: 300;
+  color: var(--red);
+  letter-spacing: 1px;
+  margin-left: 6px;
+  vertical-align: super;
+}
+.nav-links { display:flex; flex:1; }
+.nav-links a {
+  display:flex; align-items:center;
+  padding: 0 22px;
+  font-size: 10px;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  font-family: var(--mono);
+  border-right: 1px solid rgba(13,13,13,.15);
+  transition: background .2s, color .2s;
+}
+.nav-links a:hover { background: var(--ink); color: var(--paper); }
+.nav-cta {
+  margin-left: auto;
+  display: flex; align-items:center;
+  padding: 0 28px;
+  background: var(--red);
+  color: var(--paper);
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  border-left: 1.5px solid var(--ink);
+  transition: background .2s;
+  flex-shrink:0;
+}
+.nav-cta:hover { background: #A02C18; }
 
 /* ═══════════════════════════════════════
-   HERO SECTION
+   HERO
 ═══════════════════════════════════════ */
 .hero {
-  min-height: 100vh; display: grid; grid-template-columns: 1fr 1fr;
-  border-bottom: 1px solid var(--border); padding-top: 70px;
+  min-height: 100vh;
+  display: grid;
+  grid-template-rows: 1fr auto;
+  border-bottom: 1.5px solid var(--ink);
+  padding-top: 52px;
+  position: relative;
 }
-.hero-content {
-  padding: 8vw 6vw; display: flex; flex-direction: column; justify-content: center;
-  border-right: 1px solid var(--border);
+.hero-main {
+  display: grid;
+  grid-template-columns: 1fr 480px;
+  min-height: calc(100vh - 52px - 90px);
 }
-.tagline {
-  font-family: var(--mono); font-size: 10px; color: var(--accent);
-  letter-spacing: 3px; text-transform: uppercase; margin-bottom: 24px;
-  display: flex; align-items: center; gap: 12px;
+.hero-left {
+  padding: 64px 56px 48px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-right: 1.5px solid var(--ink);
 }
-.tagline::before { content: ''; width: 30px; height: 1px; background: var(--accent); }
-.hero h1 {
-  font-family: var(--cond); font-size: clamp(64px, 10vw, 140px);
-  font-weight: 900; line-height: 0.85; text-transform: uppercase;
-  margin-bottom: 32px; letter-spacing: -2px;
+.hero-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 10px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--red);
+  font-family: var(--mono);
+  margin-bottom: 40px;
 }
-.hero h1 span { color: transparent; -webkit-text-stroke: 1px var(--text-main); }
-.hero p {
-  font-size: 15px; line-height: 1.8; color: var(--text-muted);
-  max-width: 480px; margin-bottom: 48px; text-wrap: balance;
+.hero-tag::before { content:''; width:24px; height:1.5px; background:var(--red); }
+
+.hero-h1 {
+  font-family: var(--cond);
+  font-weight: 900;
+  font-size: clamp(96px, 11.5vw, 180px);
+  line-height: .88;
+  letter-spacing: -1px;
+  text-transform: uppercase;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
-.hero-visual {
-  position: relative; background: var(--surface); overflow: hidden;
+.hero-h1 .italic-line {
+  font-family: var(--serif);
+  font-style: italic;
+  font-weight: 300;
+  font-size: .45em;
+  color: var(--red);
+  letter-spacing: 0;
+  line-height: 1.1;
+  display: block;
+  margin-bottom: 4px;
 }
-.hero-visual img {
-  width: 100%; height: 100%; object-fit: cover;
-  filter: grayscale(100%) contrast(1.2) brightness(0.8);
-  mix-blend-mode: luminosity; transition: transform 3s ease;
+.hero-sub-row {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 32px;
 }
-.hero-visual:hover img { transform: scale(1.05); }
-.hero-visual::after {
-  content: ''; position: absolute; inset: 0;
-  background: linear-gradient(45deg, rgba(229,57,53,0.1), transparent);
+.hero-desc {
+  font-size: 14px;
+  line-height: 1.75;
+  color: rgba(13,13,13,.6);
+  max-width: 420px;
+  font-family: var(--mono);
+  font-weight: 300;
+}
+.hero-desc strong { color: var(--ink); font-weight: 500; }
+.hero-btns {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  flex-shrink:0;
+}
+.btn-solid {
+  display: inline-flex; align-items:center; gap:10px;
+  background: var(--ink);
+  color: var(--paper);
+  padding: 14px 28px;
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  transition: background .2s;
+  white-space: nowrap;
+}
+.btn-solid:hover { background: var(--red); }
+.btn-outline {
+  display: inline-flex; align-items:center; gap:10px;
+  border: 1.5px solid var(--ink);
+  color: var(--ink);
+  padding: 13px 28px;
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  transition: all .2s;
+  white-space: nowrap;
+}
+.btn-outline:hover { background: var(--ink); color: var(--paper); }
+
+/* Hero right — photo */
+.hero-right {
+  position: relative;
+  overflow: hidden;
+  background: var(--cream);
+}
+.hero-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  filter: contrast(1.08) saturate(0.85);
+  mix-blend-mode: multiply;
+}
+.hero-photo-bg {
+  position: absolute; inset:0;
+  background: linear-gradient(135deg, #D4C9B0 0%, #C9B99A 100%);
+}
+/* Red vertical stripe on photo */
+.hero-right::after {
+  content:'';
+  position: absolute;
+  top:0; right:0;
+  width: 6px; height: 100%;
+  background: var(--red);
+}
+/* Photo label */
+.photo-label {
+  position: absolute;
+  bottom: 24px; left: -1px;
+  background: var(--red);
+  color: var(--paper);
+  font-family: var(--mono);
+  font-size: 9px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  padding: 8px 16px;
+  writing-mode: horizontal-tb;
+  z-index: 2;
+}
+
+/* Hero stats bar */
+.hero-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  border-top: 1.5px solid var(--ink);
+}
+.stat-cell {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 20px 32px;
+  border-right: 1px solid rgba(13,13,13,.2);
+}
+.stat-cell:last-child { border-right: none; }
+.stat-n {
+  font-family: var(--cond);
+  font-weight: 900;
+  font-size: 52px;
+  line-height: 1;
+  letter-spacing: -1px;
+}
+.stat-n sub { font-size: 24px; color: var(--red); font-weight: 700; vertical-align: baseline; }
+.stat-lbl {
+  font-size: 9px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: rgba(13,13,13,.5);
+  font-family: var(--mono);
+  line-height: 1.6;
 }
 
 /* ═══════════════════════════════════════
-   BENTO BOX METHODOLOGY
+   ATHLETES — FULL BLEED GRID
 ═══════════════════════════════════════ */
-.bento-section { padding: 8vw 6vw; border-bottom: 1px solid var(--border); }
-.bento-grid {
-  display: grid; grid-template-columns: repeat(3, 1fr);
-  grid-auto-rows: 280px; gap: 1px; background: var(--border);
-  border: 1px solid var(--border);
+.section-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 28px 56px;
+  border-bottom: 1.5px solid var(--ink);
+  gap: 24px;
 }
-.bento-card {
-  background: var(--surface); padding: 40px; position: relative;
-  display: flex; flex-direction: column; justify-content: space-between;
-  transition: background 0.3s;
+.section-kicker {
+  font-family: var(--mono);
+  font-size: 9px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--red);
+  flex-shrink:0;
 }
-.bento-card:hover { background: var(--surface-hover); }
-.bento-card.large { grid-column: span 2; grid-row: span 2; }
-.bento-card.tall { grid-row: span 2; }
+.section-title-lg {
+  font-family: var(--cond);
+  font-weight: 900;
+  font-size: clamp(36px, 4.5vw, 64px);
+  text-transform: uppercase;
+  letter-spacing: -.5px;
+  line-height: .95;
+}
+.section-rule { flex:1; height:1px; background:rgba(13,13,13,.15); margin:0 24px; }
 
-.bento-number {
-  font-family: var(--cond); font-size: 64px; font-weight: 900;
-  color: rgba(255,255,255,0.05); position: absolute; top: 20px; right: 30px;
-  line-height: 1; transition: color 0.3s;
+.athletes-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  border-top: none;
 }
-.bento-card:hover .bento-number { color: var(--accent-glow); }
-.bento-title { font-family: var(--cond); font-size: 32px; font-weight: 800; text-transform: uppercase; }
-.bento-desc { font-size: 13px; color: var(--text-muted); line-height: 1.6; }
+.athlete-cell {
+  position: relative;
+  overflow: hidden;
+  border-right: 1.5px solid var(--ink);
+  border-bottom: 1.5px solid var(--ink);
+  aspect-ratio: 3/4;
+  background: var(--cream);
+  cursor: pointer;
+}
+.athlete-cell:nth-child(4n) { border-right: none; }
+.athlete-cell img {
+  width:100%; height:100%;
+  object-fit:cover; object-position:top;
+  filter: grayscale(100%) contrast(1.1);
+  transition: filter .5s, transform .6s;
+}
+.athlete-cell:hover img { filter: grayscale(0%) contrast(1.05); transform: scale(1.04); }
+.athlete-overlay {
+  position:absolute; inset:0;
+  background: linear-gradient(to top, rgba(13,13,13,.9) 0%, transparent 55%);
+  display:flex; flex-direction:column; justify-content:flex-end;
+  padding: 20px 18px;
+  opacity:0;
+  transition: opacity .35s;
+}
+.athlete-cell:hover .athlete-overlay { opacity:1; }
+.ath-name { font-family:var(--cond); font-weight:800; font-size:20px; color:var(--paper); letter-spacing:.5px; text-transform:uppercase; }
+.ath-title { font-family:var(--mono); font-size:10px; color:var(--red); letter-spacing:1.5px; text-transform:uppercase; margin-top:4px; }
+
+/* always-on name strip at bottom of each card */
+.athlete-strip {
+  position:absolute; bottom:0; left:0; right:0;
+  background:var(--ink);
+  padding:8px 14px;
+  display:flex; justify-content:space-between; align-items:center;
+}
+.as-name { font-family:var(--cond); font-weight:700; font-size:13px; color:var(--paper); letter-spacing:.5px; text-transform:uppercase; }
+.as-sport { font-family:var(--mono); font-size:8.5px; color:rgba(240,237,230,.5); letter-spacing:1.5px; text-transform:uppercase; }
 
 /* ═══════════════════════════════════════
-   PRICING
+   METHODOLOGY — ASYMMETRIC LAYOUT
 ═══════════════════════════════════════ */
-.pricing-section { padding: 8vw 6vw; }
-.pricing-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
-.plan-card {
-  border: 1px solid var(--border); background: var(--surface); padding: 48px 40px;
-  display: flex; flex-direction: column; transition: transform 0.4s var(--ease-out);
+#metodologia { border-top: 1.5px solid var(--ink); }
+.method-intro {
+  display:grid;
+  grid-template-columns: 3fr 2fr;
+  border-bottom: 1.5px solid var(--ink);
 }
-.plan-card:hover { transform: translateY(-8px); border-color: rgba(255,255,255,0.2); }
-.plan-card.vip { border-color: var(--accent); background: linear-gradient(180deg, rgba(229,57,53,0.05) 0%, var(--bg) 100%); }
-.plan-name { font-family: var(--mono); font-size: 12px; color: var(--accent); letter-spacing: 2px; text-transform: uppercase; margin-bottom: 16px; }
-.plan-card.vip .plan-name { color: var(--gold); }
-.plan-price { font-family: var(--cond); font-size: 64px; font-weight: 900; line-height: 1; margin-bottom: 32px; }
-.plan-price span { font-size: 24px; color: var(--text-muted); }
-.plan-features { list-style: none; margin-bottom: 48px; flex-grow: 1; }
-.plan-features li {
-  font-size: 13px; color: var(--text-muted); padding: 12px 0;
-  border-bottom: 1px solid var(--border); display: flex; gap: 12px;
+.method-intro-left {
+  padding: 72px 56px;
+  border-right: 1.5px solid var(--ink);
 }
-.plan-features li::before { content: '→'; color: var(--accent); }
+.method-big-text {
+  font-family: var(--cond);
+  font-weight: 300;
+  font-style: italic;
+  font-size: clamp(22px, 2.2vw, 32px);
+  line-height: 1.4;
+  color: rgba(13,13,13,.7);
+  max-width: 560px;
+}
+.method-big-text em { font-style:normal; font-weight:900; color:var(--ink); }
+.method-intro-right {
+  padding: 72px 48px;
+  display:flex; flex-direction:column; justify-content:space-between;
+}
+.method-intro-right p {
+  font-size: 13px; line-height:1.8; color:rgba(13,13,13,.55); font-family:var(--mono);
+}
+
+/* Method items */
+.method-items { display:grid; grid-template-columns:1fr 1fr; }
+.method-item {
+  padding: 56px 56px;
+  border-right: 1.5px solid var(--ink);
+  border-bottom: 1.5px solid var(--ink);
+  position:relative;
+  overflow:hidden;
+  transition: background .3s;
+}
+.method-item:hover { background: var(--cream); }
+.method-item:nth-child(even) { border-right: none; }
+.method-item:nth-child(3), .method-item:nth-child(4) { border-bottom:none; }
+
+.mi-num {
+  font-family:var(--cond);
+  font-weight:900;
+  font-size:120px;
+  line-height:1;
+  color: rgba(13,13,13,.06);
+  position:absolute; top:-10px; right:20px;
+  pointer-events:none;
+  transition: color .3s;
+}
+.method-item:hover .mi-num { color: rgba(192,52,29,.1); }
+.mi-tag {
+  font-family:var(--mono);
+  font-size:9px;
+  letter-spacing:3px;
+  text-transform:uppercase;
+  color:var(--red);
+  margin-bottom:20px;
+  display:flex; align-items:center; gap:8px;
+}
+.mi-tag::before { content:''; width:20px; height:1.5px; background:var(--red); }
+.mi-title {
+  font-family:var(--cond);
+  font-weight:900;
+  font-size:clamp(32px, 3vw, 48px);
+  text-transform:uppercase;
+  letter-spacing:-.5px;
+  line-height:1;
+  margin-bottom:20px;
+}
+.mi-body {
+  font-size:13.5px;
+  line-height:1.8;
+  color:rgba(13,13,13,.6);
+  font-family:var(--mono);
+  max-width:380px;
+}
 
 /* ═══════════════════════════════════════
-   SCROLL REVEAL ANIMATIONS
+   PRICING — NEWSPAPER COLUMNS
 ═══════════════════════════════════════ */
-.reveal { opacity: 0; transform: translateY(40px); transition: all 0.8s var(--ease-out); }
-.reveal.active { opacity: 1; transform: translateY(0); }
+#planos { border-top:1.5px solid var(--ink); }
+.pricing-cols { display:grid; grid-template-columns:2fr 1fr 1fr 1fr; border-top:1.5px solid var(--ink); }
+.pricing-intro-col {
+  padding:56px 48px;
+  border-right:1.5px solid var(--ink);
+  display:flex; flex-direction:column; justify-content:space-between;
+}
+.pricing-intro-headline {
+  font-family:var(--cond);
+  font-weight:900;
+  font-size:clamp(48px, 5vw, 80px);
+  text-transform:uppercase;
+  line-height:.9;
+  letter-spacing:-1px;
+}
+.pricing-intro-headline em {
+  display:block;
+  font-family:var(--serif);
+  font-style:italic;
+  font-weight:300;
+  font-size:.45em;
+  color:var(--red);
+  letter-spacing:0;
+  line-height:1.3;
+  margin-bottom:6px;
+}
+.pricing-note { font-family:var(--mono); font-size:12px; color:rgba(13,13,13,.5); line-height:1.7; margin-top:32px; }
+
+.plan-col {
+  border-right:1.5px solid var(--ink);
+  display:flex; flex-direction:column;
+}
+.plan-col:last-child { border-right:none; }
+.plan-col.featured { background:var(--ink); color:var(--paper); }
+
+.plan-head {
+  padding:28px 28px 20px;
+  border-bottom:1.5px solid rgba(13,13,13,.15);
+}
+.plan-col.featured .plan-head { border-bottom-color:rgba(240,237,230,.12); }
+.plan-badge-label {
+  font-family:var(--mono);
+  font-size:8px;
+  letter-spacing:2.5px;
+  text-transform:uppercase;
+  color:var(--red);
+  margin-bottom:10px;
+}
+.plan-col.featured .plan-badge-label { color: #E8C97A; }
+.plan-name {
+  font-family:var(--cond);
+  font-weight:900;
+  font-size:26px;
+  text-transform:uppercase;
+  letter-spacing:.5px;
+}
+.plan-tagline { font-family:var(--mono); font-size:11px; color:rgba(13,13,13,.45); margin-top:6px; line-height:1.5; }
+.plan-col.featured .plan-tagline { color:rgba(240,237,230,.4); }
+
+.plan-price-block {
+  padding:24px 28px;
+  border-bottom:1px solid rgba(13,13,13,.12);
+}
+.plan-col.featured .plan-price-block { border-bottom-color:rgba(240,237,230,.1); }
+.plan-price-big {
+  font-family:var(--cond);
+  font-weight:900;
+  font-size:56px;
+  line-height:1;
+  letter-spacing:-1px;
+}
+.plan-price-big small { font-size:22px; letter-spacing:0; }
+.plan-price-alt { font-family:var(--mono); font-size:10px; color:rgba(13,13,13,.4); margin-top:4px; }
+.plan-col.featured .plan-price-alt { color:rgba(240,237,230,.35); }
+
+.plan-features-list {
+  flex:1;
+  padding:20px 28px;
+  list-style:none;
+  border-bottom:1px solid rgba(13,13,13,.1);
+}
+.plan-col.featured .plan-features-list { border-bottom-color:rgba(240,237,230,.1); }
+.plan-features-list li {
+  font-family:var(--mono);
+  font-size:11.5px;
+  padding:9px 0;
+  border-bottom:1px solid rgba(13,13,13,.07);
+  display:flex; gap:8px; align-items:flex-start;
+  color:rgba(13,13,13,.7);
+  line-height:1.4;
+}
+.plan-col.featured .plan-features-list li { color:rgba(240,237,230,.65); border-bottom-color:rgba(240,237,230,.08); }
+.plan-features-list li::before { content:'→'; color:var(--red); flex-shrink:0; font-size:11px; }
+
+.plan-cta-wrap { padding:24px 28px; }
+.plan-btn-dark {
+  display:block; text-align:center;
+  border:1.5px solid var(--ink);
+  color:var(--ink);
+  padding:14px;
+  font-family:var(--mono);
+  font-size:10px;
+  letter-spacing:2px;
+  text-transform:uppercase;
+  transition:all .2s;
+}
+.plan-btn-dark:hover { background:var(--ink); color:var(--paper); }
+.plan-btn-light {
+  display:block; text-align:center;
+  background:var(--red);
+  color:var(--paper);
+  border:1.5px solid var(--red);
+  padding:14px;
+  font-family:var(--mono);
+  font-size:10px;
+  letter-spacing:2px;
+  text-transform:uppercase;
+  transition:all .2s;
+}
+.plan-btn-light:hover { background:#A02C18; border-color:#A02C18; }
+
+/* ═══════════════════════════════════════
+   FAQ
+═══════════════════════════════════════ */
+#faq { border-top:1.5px solid var(--ink); }
+.faq-layout {
+  display:grid;
+  grid-template-columns:2fr 3fr;
+  border-top:1.5px solid var(--ink);
+  min-height:480px;
+}
+.faq-left {
+  padding:64px 56px;
+  border-right:1.5px solid var(--ink);
+  display:flex; flex-direction:column; justify-content:space-between;
+}
+.faq-big {
+  font-family:var(--cond);
+  font-weight:900;
+  font-size:clamp(64px, 8vw, 120px);
+  text-transform:uppercase;
+  line-height:.85;
+  letter-spacing:-2px;
+}
+.faq-big .red { color:var(--red); }
+.faq-left-sub { font-family:var(--mono); font-size:12px; color:rgba(13,13,13,.45); line-height:1.7; margin-top:32px; }
+.faq-right { padding:0; }
+.faq-item {
+  border-bottom:1.5px solid var(--ink);
+  overflow:hidden;
+}
+.faq-item:first-child { border-top:none; }
+.faq-q {
+  width:100%; background:none; border:none; cursor:pointer;
+  display:flex; justify-content:space-between; align-items:center;
+  padding:28px 48px;
+  gap:24px;
+  font-family:var(--cond);
+  font-weight:700;
+  font-size:20px;
+  letter-spacing:.3px;
+  text-transform:uppercase;
+  color:var(--ink);
+  text-align:left;
+  transition: background .2s;
+}
+.faq-q:hover { background:var(--cream); }
+.faq-item.open .faq-q { background:var(--ink); color:var(--paper); }
+.faq-icon { width:28px; height:28px; border:1.5px solid currentColor; border-radius:50%; display:flex; align-items:center; justify-content:center; flex-shrink:0; font-size:18px; line-height:1; transition:transform .3s; font-family:var(--mono); font-weight:300; }
+.faq-item.open .faq-icon { transform:rotate(45deg); }
+.faq-a {
+  max-height:0; overflow:hidden;
+  transition:max-height .4s cubic-bezier(.4,0,.2,1);
+  font-family:var(--mono); font-size:13.5px; color:rgba(13,13,13,.6); line-height:1.8;
+  background:var(--cream);
+}
+.faq-item.open .faq-a { max-height:200px; }
+.faq-a-inner { padding:24px 48px 28px; }
+
+/* ═══════════════════════════════════════
+   FINAL CTA
+═══════════════════════════════════════ */
+.cta-section {
+  background:var(--ink);
+  color:var(--paper);
+  display:grid;
+  grid-template-columns:1fr auto;
+  align-items:center;
+  padding:80px 56px;
+  gap:48px;
+  border-top:1.5px solid var(--ink);
+  position:relative;
+  overflow:hidden;
+}
+.cta-bg-text {
+  position:absolute;
+  top:50%; left:-20px;
+  transform:translateY(-50%);
+  font-family:var(--cond);
+  font-weight:900;
+  font-size:clamp(100px,14vw,220px);
+  text-transform:uppercase;
+  color:rgba(240,237,230,.025);
+  white-space:nowrap;
+  letter-spacing:-4px;
+  pointer-events:none;
+  user-select:none;
+}
+.cta-title {
+  font-family:var(--cond);
+  font-weight:900;
+  font-size:clamp(48px,5.5vw,88px);
+  text-transform:uppercase;
+  line-height:.9;
+  letter-spacing:-1px;
+  position:relative;
+}
+.cta-title em {
+  display:block;
+  font-family:var(--serif);
+  font-style:italic;
+  font-weight:300;
+  font-size:.42em;
+  color:var(--red);
+  letter-spacing:0;
+  line-height:1.3;
+  margin-bottom:8px;
+}
+.cta-sub { font-family:var(--mono); font-size:13px; color:rgba(240,237,230,.45); margin-top:16px; line-height:1.7; max-width:480px; }
+.cta-actions { display:flex; flex-direction:column; gap:12px; flex-shrink:0; }
+.cta-btn-main {
+  background:var(--red); color:var(--paper);
+  padding:18px 40px;
+  font-family:var(--mono); font-size:11px; letter-spacing:2px; text-transform:uppercase;
+  transition:background .2s;
+  white-space:nowrap;
+}
+.cta-btn-main:hover { background:#A02C18; }
+.cta-btn-sec {
+  border:1px solid rgba(240,237,230,.25); color:rgba(240,237,230,.55);
+  padding:17px 40px;
+  font-family:var(--mono); font-size:11px; letter-spacing:2px; text-transform:uppercase;
+  text-align:center;
+  transition:all .2s;
+}
+.cta-btn-sec:hover { border-color:var(--paper); color:var(--paper); }
+
+/* ═══════════════════════════════════════
+   FOOTER
+═══════════════════════════════════════ */
+footer {
+  display:flex; align-items:center; justify-content:space-between;
+  padding:18px 56px;
+  border-top:1.5px solid rgba(240,237,230,.15);
+  background:var(--ink);
+  color:rgba(240,237,230,.35);
+  font-family:var(--mono);
+  font-size:10px;
+  letter-spacing:1.5px;
+  text-transform:uppercase;
+}
+footer span { color:rgba(240,237,230,.2); }
+
+/* ═══════════════════════════════════════
+   SCROLL REVEAL
+═══════════════════════════════════════ */
+.sr { opacity:0; transform:translateY(36px); transition:opacity .7s ease, transform .7s ease; }
+.sr.vis { opacity:1; transform:none; }
+.sr-l { opacity:0; transform:translateX(-36px); transition:opacity .7s ease, transform .7s ease; }
+.sr-l.vis { opacity:1; transform:none; }
+
+/* ═══════════════════════════════════════
+   READABILITY — GLOBAL IMPROVEMENTS
+═══════════════════════════════════════ */
+/* Slightly larger body mono text */
+.hero-desc, .mi-body, .method-big-text, .pricing-note,
+.faq-a, .cta-sub, .plan-tagline, .faq-left-sub,
+.method-intro-right p { font-size:14px; line-height:1.85; }
+
+/* ═══════════════════════════════════════
+   READING PROGRESS BAR
+═══════════════════════════════════════ */
+#progress-bar {
+  position: fixed;
+  top: 0; left: 0;
+  height: 3px;
+  width: 0%;
+  background: var(--red);
+  z-index: 9999;
+  transition: width .1s linear;
+  pointer-events: none;
+}
+
+/* ═══════════════════════════════════════
+   SCROLLSPY NAV
+═══════════════════════════════════════ */
+.nav-links a.active {
+  background: var(--ink);
+  color: var(--paper);
+}
+
+/* ═══════════════════════════════════════
+   HAMBURGER MENU
+═══════════════════════════════════════ */
+.nav-hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  padding: 0 18px;
+  height: 52px;
+  background: none;
+  border: none;
+  border-left: 1px solid rgba(13,13,13,.15);
+  cursor: pointer;
+  flex-shrink: 0;
+}
+.nav-hamburger span {
+  display: block;
+  width: 20px;
+  height: 1.5px;
+  background: var(--ink);
+  transition: all .3s;
+}
+.nav-hamburger.open span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+.nav-hamburger.open span:nth-child(2) { opacity: 0; }
+.nav-hamburger.open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+
+.nav-mobile {
+  display: none;
+  position: fixed;
+  top: 52px; left: 0; right: 0;
+  background: var(--paper);
+  border-bottom: 1.5px solid var(--ink);
+  z-index: 199;
+  flex-direction: column;
+}
+.nav-mobile.open { display: flex; }
+.nav-mobile a {
+  padding: 16px 24px;
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  border-bottom: 1px solid rgba(13,13,13,.1);
+  transition: background .2s;
+}
+.nav-mobile a:hover { background: var(--cream); }
+.nav-mobile a:last-child {
+  background: var(--red);
+  color: var(--paper);
+  border-bottom: none;
+  text-align: center;
+}
+
+/* ═══════════════════════════════════════
+   STICKY PRICING CTA BAR
+═══════════════════════════════════════ */
+.sticky-plans-bar {
+  position: fixed;
+  bottom: 0; left: 0; right: 0;
+  z-index: 300;
+  background: var(--ink);
+  border-top: 1.5px solid var(--red);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 56px;
+  gap: 16px;
+  transform: translateY(100%);
+  transition: transform .4s cubic-bezier(.16,1,.3,1);
+  pointer-events: none;
+}
+.sticky-plans-bar.show {
+  transform: translateY(0);
+  pointer-events: all;
+}
+.sticky-plans-bar-text {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 1.5px;
+  color: rgba(240,237,230,.5);
+  text-transform: uppercase;
+}
+.sticky-plans-bar-text strong {
+  color: var(--paper);
+  font-weight: 500;
+}
+.sticky-plans-bar-cta {
+  background: var(--red);
+  color: var(--paper);
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  padding: 11px 28px;
+  white-space: nowrap;
+  flex-shrink: 0;
+  transition: background .2s;
+}
+.sticky-plans-bar-cta:hover { background: #A02C18; }
+.sticky-plans-bar-close {
+  background: none;
+  border: none;
+  color: rgba(240,237,230,.3);
+  font-size: 18px;
+  cursor: pointer;
+  padding: 4px 8px;
+  line-height: 1;
+  flex-shrink: 0;
+  transition: color .2s;
+}
+.sticky-plans-bar-close:hover { color: var(--paper); }
+
+/* ═══════════════════════════════════════
+   MOBILE ATHLETE CAROUSEL
+═══════════════════════════════════════ */
+.athletes-carousel {
+  display: none; /* hidden on desktop */
+}
+@media(max-width:900px) {
+  /* hide grid, show carousel */
+  .athletes-grid { display: none; }
+  .athletes-carousel {
+    display: block;
+    overflow: hidden;
+    border-bottom: 1.5px solid var(--ink);
+    position: relative;
+  }
+  .athletes-carousel::before,
+  .athletes-carousel::after {
+    content: '';
+    position: absolute;
+    top: 0; bottom: 0;
+    width: 48px;
+    z-index: 2;
+    pointer-events: none;
+  }
+  .athletes-carousel::before {
+    left: 0;
+    background: linear-gradient(to right, var(--paper), transparent);
+  }
+  .athletes-carousel::after {
+    right: 0;
+    background: linear-gradient(to left, var(--paper), transparent);
+  }
+
+  .carousel-track {
+    display: flex;
+    gap: 0;
+    width: max-content;
+    animation: carouselScroll 28s linear infinite;
+    will-change: transform;
+  }
+  .carousel-track.paused { animation-play-state: paused; }
+
+  @keyframes carouselScroll {
+    from { transform: translateX(0); }
+    to   { transform: translateX(-50%); }
+  }
+
+  .carousel-slide {
+    width: 72vw;
+    max-width: 320px;
+    flex-shrink: 0;
+    position: relative;
+    border-right: 1.5px solid var(--ink);
+    aspect-ratio: 3/4;
+    background: var(--cream);
+    overflow: hidden;
+  }
+  .carousel-slide img {
+    width: 100%; height: 100%;
+    object-fit: cover; object-position: top;
+    filter: grayscale(100%) contrast(1.1);
+  }
+  .carousel-slide .athlete-overlay {
+    opacity: 1;
+    background: linear-gradient(to top, rgba(13,13,13,.85) 0%, transparent 55%);
+  }
+  .carousel-slide .athlete-strip {
+    position: absolute; bottom: 0; left: 0; right: 0;
+    background: var(--ink); padding: 8px 14px;
+    display: flex; justify-content: space-between; align-items: center;
+  }
+
+  /* sticky bar mobile adjustments */
+  .sticky-plans-bar { padding: 12px 20px; }
+  .sticky-plans-bar-text { display: none; }
+}
+
+.scroll-hint {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--mono);
+  font-size: 9px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: rgba(13,13,13,.35);
+  margin-top: 40px;
+  animation: hintBounce 2s ease-in-out infinite;
+}
+.scroll-hint::before {
+  content: '';
+  width: 1px;
+  height: 32px;
+  background: linear-gradient(to bottom, transparent, var(--red));
+  animation: lineGrow 2s ease-in-out infinite;
+}
+@keyframes hintBounce { 0%,100%{opacity:.4} 50%{opacity:1} }
+@keyframes lineGrow { 0%,100%{transform:scaleY(.5);transform-origin:top} 50%{transform:scaleY(1)} }
+
+/* ═══════════════════════════════════════
+   FAQ — dynamic height fix
+═══════════════════════════════════════ */
+.faq-item.open .faq-a { max-height: none; }
+
+/* ═══════════════════════════════════════
+   PARA QUEM — mobile fix wrapper
+═══════════════════════════════════════ */
+.para-quem-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  border-top: 1.5px solid rgba(240,237,230,.1);
+}
+.para-quem-quote {
+  padding: 64px 56px;
+  border-right: 1.5px solid rgba(240,237,230,.1);
+}
+.para-quem-cards {
+  padding: 64px 56px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1px;
+  background: rgba(240,237,230,.08);
+  align-content: start;
+}
+
+/* ═══════════════════════════════════════
+   CONHEÇA O RINALDO
+═══════════════════════════════════════ */
+#conheca { border-top: 1.5px solid var(--ink); background: var(--ink); color: var(--paper); }
+#conheca .section-header {
+  border-bottom-color: rgba(240,237,230,.1);
+}
+#conheca .section-kicker { color: var(--red); }
+#conheca .section-rule { background: rgba(240,237,230,.1); }
+#conheca .section-title-lg { color: var(--paper); }
+
+.conheca-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  border-top: 1.5px solid rgba(240,237,230,.1);
+}
+.conheca-bio {
+  padding: 64px 56px;
+  border-right: 1.5px solid rgba(240,237,230,.1);
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+.conheca-photo-wrap {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4/5;
+  background: #1a1a1a;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+.conheca-photo-wrap img {
+  width: 100%; height: 100%;
+  object-fit: cover; object-position: top center;
+  filter: contrast(1.06) saturate(0.9);
+  mix-blend-mode: luminosity;
+}
+.conheca-photo-wrap::after {
+  content: '';
+  position: absolute; inset: 0;
+  background: linear-gradient(to top, rgba(13,13,13,.6) 0%, transparent 50%);
+}
+.conheca-photo-label {
+  position: absolute;
+  bottom: 0; left: 0;
+  background: var(--red);
+  color: var(--paper);
+  font-family: var(--mono);
+  font-size: 9px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  padding: 8px 16px;
+  z-index: 2;
+}
+.conheca-bio-text {
+  font-family: var(--mono);
+  font-size: 14px;
+  line-height: 1.85;
+  color: rgba(240,237,230,.65);
+}
+.conheca-bio-text strong { color: var(--paper); font-weight: 500; }
+.conheca-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 4px;
+}
+.conheca-tag {
+  font-family: var(--mono);
+  font-size: 9px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: rgba(240,237,230,.5);
+  border: 1px solid rgba(240,237,230,.15);
+  padding: 5px 12px;
+}
+
+.conheca-right {
+  display: flex;
+  flex-direction: column;
+}
+.conheca-block {
+  padding: 40px 48px;
+  border-bottom: 1.5px solid rgba(240,237,230,.1);
+}
+.conheca-block:last-child { border-bottom: none; }
+.conheca-block-title {
+  font-family: var(--cond);
+  font-weight: 900;
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--red);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 24px;
+}
+.conheca-block-title::before {
+  content: '';
+  width: 20px; height: 1.5px;
+  background: var(--red);
+}
+.conheca-credential {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+  padding: 12px 0;
+  border-bottom: 1px solid rgba(240,237,230,.07);
+}
+.conheca-credential:last-child { border-bottom: none; }
+.conheca-cred-year {
+  font-family: var(--mono);
+  font-size: 9px;
+  color: rgba(240,237,230,.3);
+  letter-spacing: 1px;
+  white-space: nowrap;
+  padding-top: 3px;
+  min-width: 36px;
+}
+.conheca-cred-body { flex: 1; }
+.conheca-cred-name {
+  font-family: var(--cond);
+  font-weight: 700;
+  font-size: 15px;
+  color: var(--paper);
+  line-height: 1.2;
+  text-transform: uppercase;
+  letter-spacing: .3px;
+}
+.conheca-cred-detail {
+  font-family: var(--mono);
+  font-size: 11px;
+  color: rgba(240,237,230,.4);
+  margin-top: 3px;
+  line-height: 1.5;
+}
+.conheca-expertise-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+.conheca-exp-item {
+  background: rgba(240,237,230,.04);
+  border: 1px solid rgba(240,237,230,.08);
+  padding: 16px 20px;
+  transition: border-color .25s, background .25s;
+}
+.conheca-exp-item:hover {
+  border-color: rgba(192,52,29,.4);
+  background: rgba(192,52,29,.05);
+}
+.conheca-exp-icon {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+.conheca-exp-title {
+  font-family: var(--cond);
+  font-weight: 700;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: .3px;
+  color: var(--paper);
+  margin-bottom: 6px;
+}
+.conheca-exp-desc {
+  font-family: var(--mono);
+  font-size: 11px;
+  color: rgba(240,237,230,.4);
+  line-height: 1.55;
+}
+
+/* ═══════════════════════════════════════
+   INSTAGRAM GRID
+═══════════════════════════════════════ */
+#instagram { border-top: 1.5px solid var(--ink); }
+.ig-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  border-top: 1.5px solid var(--ink);
+}
+.ig-card {
+  position: relative;
+  aspect-ratio: 1/1;
+  border-right: 1.5px solid var(--ink);
+  border-bottom: 1.5px solid var(--ink);
+  overflow: hidden;
+  background: var(--cream);
+  cursor: pointer;
+  text-decoration: none;
+  display: block;
+}
+.ig-card:nth-child(4n) { border-right: none; }
+.ig-card:nth-last-child(-n+4) { border-bottom: none; }
+.ig-card-bg {
+  width: 100%; height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--cond);
+  font-weight: 900;
+  font-size: clamp(28px, 3.5vw, 52px);
+  text-transform: uppercase;
+  letter-spacing: -1px;
+  line-height: .9;
+  text-align: center;
+  padding: 20px;
+  transition: transform .5s ease;
+  user-select: none;
+}
+.ig-card:hover .ig-card-bg { transform: scale(1.04); }
+.ig-card-overlay {
+  position: absolute; inset: 0;
+  background: rgba(13,13,13,0);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 8px;
+  transition: background .3s;
+}
+.ig-card:hover .ig-card-overlay { background: rgba(13,13,13,.75); }
+.ig-overlay-icon {
+  font-size: 28px;
+  opacity: 0;
+  transform: scale(.7);
+  transition: opacity .3s, transform .3s;
+}
+.ig-overlay-label {
+  font-family: var(--mono);
+  font-size: 9px;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: rgba(240,237,230,.7);
+  opacity: 0;
+  transition: opacity .3s .05s;
+}
+.ig-card:hover .ig-overlay-icon,
+.ig-card:hover .ig-overlay-label { opacity: 1; transform: scale(1); }
+.ig-card-tag {
+  position: absolute;
+  bottom: 0; left: 0;
+  background: var(--ink);
+  color: rgba(240,237,230,.6);
+  font-family: var(--mono);
+  font-size: 9px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  padding: 6px 12px;
+}
+.ig-cta-cell {
+  aspect-ratio: 1/1;
+  border-right: none;
+  border-bottom: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  background: var(--ink);
+  padding: 32px;
+  text-align: center;
+  text-decoration: none;
+  transition: background .25s;
+}
+.ig-cta-cell:hover { background: #1a1a1a; }
+.ig-cta-handle {
+  font-family: var(--cond);
+  font-weight: 900;
+  font-size: clamp(22px, 2.5vw, 32px);
+  color: var(--paper);
+  letter-spacing: -.5px;
+  text-transform: uppercase;
+  line-height: 1;
+}
+.ig-cta-sub {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: rgba(240,237,230,.35);
+  line-height: 1.6;
+}
+.ig-cta-btn {
+  background: var(--red);
+  color: var(--paper);
+  font-family: var(--mono);
+  font-size: 9px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  padding: 10px 20px;
+  transition: background .2s;
+}
+.ig-cta-cell:hover .ig-cta-btn { background: #A02C18; }
+
+/* ─── Instagram responsive ─── */
+@media(max-width:900px){
+  .ig-grid { grid-template-columns: repeat(2, 1fr); }
+  .ig-card:nth-child(4n) { border-right: 1.5px solid var(--ink); }
+  .ig-card:nth-child(2n) { border-right: none; }
+  .ig-card:nth-last-child(-n+4) { border-bottom: 1.5px solid var(--ink); }
+  .ig-card:nth-last-child(-n+2) { border-bottom: none; }
+  .ig-cta-cell { grid-column: 1 / -1; aspect-ratio: auto; padding: 48px 24px; }
+  .conheca-layout { grid-template-columns: 1fr; }
+  .conheca-bio { border-right: none; border-bottom: 1.5px solid rgba(240,237,230,.1); padding: 40px 20px; }
+  .conheca-block { padding: 32px 20px; }
+  .conheca-expertise-grid { grid-template-columns: 1fr; }
+  .ig-overlay-icon, .ig-overlay-label { opacity: 1; transform: scale(1); }
+  .ig-card-overlay { background: rgba(13,13,13,.5); }
+}
+
+.mi-body, .hero-desc, .method-intro-right p,
+.plan-tagline, .faq-left-sub, .pricing-note { color: rgba(13,13,13,.72); }
+
+/* ═══════════════════════════════════════
+   PRICING — ENHANCED
+═══════════════════════════════════════ */
+.plan-daily {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--red);
+  margin-top: 8px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.plan-daily::before { content: ''; width: 14px; height: 1px; background: var(--red); }
+.plan-col.featured .plan-daily { color: #E8C97A; }
+.plan-col.featured .plan-daily::before { background: #E8C97A; }
+
+.plan-price-secondary {
+  font-family: var(--mono);
+  font-size: 11px;
+  color: rgba(13,13,13,.38);
+  margin-top: 4px;
+}
+.plan-col.featured .plan-price-secondary { color: rgba(240,237,230,.3); }
+
+.plan-discount-badge {
+  display: inline-flex;
+  align-items: center;
+  background: var(--red);
+  color: var(--paper);
+  font-family: var(--mono);
+  font-size: 9px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  padding: 3px 9px;
+  margin-top: 8px;
+}
+.plan-col.featured .plan-discount-badge { background: #E8C97A; color: var(--ink); }
+
+.plan-vip-highlight {
+  margin: 0 28px 20px;
+  padding: 16px 20px;
+  background: rgba(240,237,230,.05);
+  border: 1px solid rgba(232,201,122,.3);
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+.plan-vip-highlight-icon { font-size: 20px; flex-shrink: 0; line-height: 1.2; }
+.plan-vip-highlight-text { font-family: var(--mono); font-size: 11px; line-height: 1.6; color: rgba(240,237,230,.6); }
+.plan-vip-highlight-text strong { display: block; color: #E8C97A; font-weight: 500; margin-bottom: 2px; font-size: 12px; }
+
+.pricing-improviso {
+  margin-top: 32px;
+  padding: 18px 22px;
+  border-left: 2px solid var(--red);
+  background: rgba(192,52,29,.04);
+}
+.pricing-improviso p {
+  font-family: var(--mono);
+  font-size: 12px;
+  line-height: 1.75;
+  color: rgba(13,13,13,.55);
+  font-style: italic;
+}
+.pricing-improviso strong { color: var(--ink); font-style: normal; font-weight: 500; }
+
+/* ═══════════════════════════════════════
+   STAT CELL — micro hover
+═══════════════════════════════════════ */
+.stat-cell {
+  transition: background .25s;
+  cursor: default;
+}
+.stat-cell:hover { background: var(--cream); }
+.stat-n { transition: color .25s; }
+.stat-cell:hover .stat-n { color: var(--red); }
+
+/* ═══════════════════════════════════════
+   TESTIMONIALS
+═══════════════════════════════════════ */
+#depoimentos { border-top: 1.5px solid var(--ink); background: var(--cream); }
+.testi-grid-wrap {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  border-top: 1.5px solid var(--ink);
+}
+.testi-card {
+  padding: 48px 40px;
+  border-right: 1.5px solid var(--ink);
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  transition: background .3s;
+  position: relative;
+}
+.testi-card:last-child { border-right: none; }
+.testi-card:hover { background: var(--paper); }
+.testi-quote-mark {
+  font-family: var(--serif);
+  font-size: 80px;
+  line-height: .7;
+  color: rgba(192,52,29,.15);
+  font-style: italic;
+  user-select: none;
+}
+.testi-result {
+  font-family: var(--cond);
+  font-weight: 900;
+  font-size: clamp(36px, 3.5vw, 52px);
+  line-height: 1;
+  letter-spacing: -1px;
+  color: var(--red);
+}
+.testi-result-label {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: rgba(13,13,13,.45);
+  margin-top: 4px;
+}
+.testi-text {
+  font-family: var(--mono);
+  font-size: 13.5px;
+  line-height: 1.8;
+  color: rgba(13,13,13,.68);
+  flex: 1;
+}
+.testi-author {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding-top: 24px;
+  border-top: 1px solid rgba(13,13,13,.12);
+}
+.testi-name {
+  font-family: var(--cond);
+  font-weight: 700;
+  font-size: 16px;
+  letter-spacing: .5px;
+  text-transform: uppercase;
+}
+.testi-role {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--red);
+}
+.testi-plan {
+  font-family: var(--mono);
+  font-size: 9.5px;
+  color: rgba(13,13,13,.35);
+  margin-top: 2px;
+}
+
+/* ═══════════════════════════════════════
+   NEXT STEP NOTE (abaixo dos CTAs)
+═══════════════════════════════════════ */
+.next-step-note {
+  font-family: var(--mono);
+  font-size: 10px;
+  color: rgba(240,237,230,.35);
+  letter-spacing: 1px;
+  text-align: center;
+  margin-top: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+.next-step-note::before {
+  content: '';
+  width: 16px; height: 1px;
+  background: rgba(240,237,230,.2);
+}
+.next-step-note::after {
+  content: '';
+  width: 16px; height: 1px;
+  background: rgba(240,237,230,.2);
+}
+
+/* ═══════════════════════════════════════
+   WHATSAPP FLOAT BUTTON
+═══════════════════════════════════════ */
+.wa-float {
+  position: fixed;
+  bottom: 28px;
+  right: 28px;
+  z-index: 350;
+  width: 56px; height: 56px;
+  background: #25D366;
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  box-shadow: 0 4px 24px rgba(37,211,102,.4);
+  transition: transform .25s, box-shadow .25s;
+  cursor: pointer;
+}
+.wa-float:hover {
+  transform: scale(1.1) translateY(-2px);
+  box-shadow: 0 8px 32px rgba(37,211,102,.5);
+}
+.wa-float svg { width: 28px; height: 28px; fill: #fff; }
+.wa-float-tooltip {
+  position: absolute;
+  right: 68px;
+  background: var(--ink);
+  color: var(--paper);
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  padding: 8px 14px;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .2s;
+}
+.wa-float:hover .wa-float-tooltip { opacity: 1; }
+
+/* ═══════════════════════════════════════
+   RESPONSIVE — TESTIMONIALS
+═══════════════════════════════════════ */
+@media(max-width:900px) {
+  .testi-grid-wrap { grid-template-columns: 1fr; }
+  .testi-card { border-right: none; border-bottom: 1.5px solid var(--ink); }
+  .testi-card:last-child { border-bottom: none; }
+  .wa-float { bottom: 80px; }
+}
+
+/* ═══════════════════════════════════════
+   CURSOR — desktop only
+═══════════════════════════════════════ */
+#cur, #cur2 { display: none; }
+@media(hover:hover) and (pointer:fine) {
+  body { cursor: none; }
+  #cur  { display:block; position:fixed; width:12px; height:12px; background:var(--red); border-radius:50%; pointer-events:none; z-index:9999; transform:translate(-50%,-50%); transition:transform .1s; mix-blend-mode:multiply; }
+  #cur2 { display:block; position:fixed; width:40px; height:40px; border:1.5px solid var(--ink); border-radius:50%; pointer-events:none; z-index:9998; transform:translate(-50%,-50%); transition:left .12s ease,top .12s ease; }
+  body.link-hover #cur  { transform:translate(-50%,-50%) scale(2.5); }
+  body.link-hover #cur2 { width:64px; height:64px; border-color:var(--red); }
+}
 
 /* ═══════════════════════════════════════
    RESPONSIVE
 ═══════════════════════════════════════ */
-@media(max-width: 1024px) {
-  .hero { grid-template-columns: 1fr; }
-  .hero-visual { height: 50vh; order: -1; }
-  .bento-grid { grid-template-columns: 1fr 1fr; }
-  .bento-card.large { grid-column: span 2; }
+@media(max-width:1100px){
+  .hero-main { grid-template-columns:1fr 360px; }
 }
-@media(max-width: 768px) {
-  nav { padding: 16px 20px; }
-  .nav-links { display: none; }
-  .bento-grid { grid-template-columns: 1fr; display: flex; flex-direction: column; }
-  .pricing-grid { grid-template-columns: 1fr; }
-  .plan-card { padding: 32px 24px; }
+@media(max-width:900px){
+  /* Nav */
+  nav { padding:0; }
+  .nav-links { display:none; }
+  .nav-cta { display:none; }
+  .nav-hamburger { display:flex; }
+  .nav-brand { padding:0 16px; font-size:13px; }
+
+  /* Hero */
+  .hero-main { grid-template-columns:1fr; }
+  .hero-right { height:380px; }
+  .hero-left { padding:36px 20px 28px; }
+  .hero-sub-row { flex-direction:column; align-items:flex-start; gap:24px; }
+  .hero-btns { flex-direction:row; flex-wrap:wrap; }
+  .scroll-hint { display:none; }
+
+  /* Stats — 1 coluna no mobile */
+  .hero-stats { grid-template-columns: 1fr; }
+  .stat-cell { border-right:none; border-bottom:1px solid rgba(13,13,13,.12); padding:18px 20px; }
+  .stat-cell:last-child { border-bottom:none; }
+  .stat-n { font-size:40px; }
+
+  /* Section headers */
+  .section-header { padding:18px 20px; flex-wrap:wrap; }
+  section { padding-left:0; padding-right:0; }
+
+  /* Athletes — 1 coluna no mobile */
+  .athletes-grid { grid-template-columns:1fr; }
+  .athlete-cell { border-right:none; aspect-ratio:4/3; }
+  .athlete-cell:nth-child(4n) { border-right:none; }
+  .athlete-overlay { opacity:1; background:linear-gradient(to top,rgba(13,13,13,.85) 0%,transparent 50%); }
+
+  /* Methodology */
+  .method-intro { grid-template-columns:1fr; }
+  .method-intro-left { border-right:none; border-bottom:1.5px solid var(--ink); padding:40px 20px; }
+  .method-intro-right { padding:40px 20px; }
+  .method-items { grid-template-columns:1fr; }
+  .method-item { border-right:none; padding:40px 20px; }
+  .method-item:nth-child(even) { border-right:none; }
+  .method-item:nth-child(3) { border-bottom:1.5px solid var(--ink); }
+  .mi-num { font-size:80px; right:12px; }
+  .mi-title { font-size:clamp(28px,7vw,40px); }
+
+  /* Para Quem */
+  .para-quem-grid { grid-template-columns:1fr; }
+  .para-quem-quote { border-right:none; border-bottom:1.5px solid rgba(240,237,230,.1); padding:40px 20px; }
+  .para-quem-cards { grid-template-columns:1fr; padding:0; gap:0; background:transparent; }
+  .para-quem-cards > div { border-right:none !important; border-bottom:1px solid rgba(240,237,230,.1); }
+
+  /* Pricing */
+  .pricing-cols { grid-template-columns:1fr; }
+  .pricing-intro-col { border-right:none; border-bottom:1.5px solid var(--ink); padding:40px 20px; }
+  .plan-col { border-right:none; border-bottom:1.5px solid var(--ink); }
+  .plan-head,.plan-price-block,.plan-features-list,.plan-cta-wrap { padding-left:20px; padding-right:20px; }
+
+  /* FAQ */
+  .faq-layout { grid-template-columns:1fr; }
+  .faq-left { border-right:none; border-bottom:1.5px solid var(--ink); padding:36px 20px; }
+  .faq-big { font-size:clamp(52px,14vw,96px); }
+  .faq-q { padding:20px 20px; font-size:17px; }
+  .faq-a-inner { padding:16px 20px 20px; }
+
+  /* CTA + Footer */
+  .cta-section { grid-template-columns:1fr; padding:56px 20px; gap:32px; }
+  .cta-actions { flex-direction:column; width:100%; }
+  .cta-btn-main, .cta-btn-sec { text-align:center; padding:16px 24px; }
+  footer { padding:16px 20px; flex-direction:column; gap:6px; text-align:center; }
+}
+
+@media(max-width:480px){
+  .hero-h1 { font-size:clamp(72px,18vw,120px); }
+  .stat-n { font-size:36px; }
+  .hero-btns { flex-direction:column; }
+  .para-quem-cards { grid-template-columns:1fr; }
+  .btn-solid, .btn-outline { width:100%; justify-content:center; }
 }
 </style>
 </head>
 <body>
 
-<div class="noise-overlay"></div>
+<div id="progress-bar"></div>
+<div class="grid-overlay"></div>
+<div id="cur"></div>
+<div id="cur2"></div>
 
+<!-- WhatsApp Float -->
+<a class="wa-float" href="https://wa.me/5582988458845?text=Olá%20Rinaldo%2C%20quero%20saber%20mais%20sobre%20o%20acompanhamento%20nutricional" target="_blank" rel="noopener" aria-label="Falar no WhatsApp">
+  <span class="wa-float-tooltip">Falar no WhatsApp</span>
+  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.553 4.116 1.52 5.845L.057 23.854a.5.5 0 00.61.61l6.01-1.463A11.938 11.938 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.797 9.797 0 01-5.002-1.374l-.359-.213-3.718.905.92-3.619-.234-.372A9.797 9.797 0 012.182 12C2.182 6.57 6.57 2.182 12 2.182S21.818 6.57 21.818 12 17.43 21.818 12 21.818z"/></svg>
+</a>
+
+<!-- ═══ NAV ═══ -->
 <nav>
-  <div class="logo">Rinaldo Caporal<span>.</span></div>
+  <a href="#" class="nav-brand">Rinaldo Caporal<sup>© AL</sup></a>
   <div class="nav-links">
-    <a href="#metodo">Método</a>
-    <a href="#bio">Health Compass</a>
+    <a href="#conheca">Sobre</a>
+    <a href="#metodologia">Metodologia</a>
+    <a href="#atletas">Atletas</a>
+    <a href="#depoimentos">Depoimentos</a>
+    <a href="#instagram">Instagram</a>
     <a href="#planos">Planos</a>
+    <a href="#faq">FAQ</a>
   </div>
+  <a href="#planos" class="nav-cta">Ver Planos →</a>
+  <button class="nav-hamburger" id="hamburger" aria-label="Menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
 </nav>
+<div class="nav-mobile" id="navMobile">
+  <a href="#conheca">Sobre</a>
+  <a href="#metodologia">Metodologia</a>
+  <a href="#atletas">Atletas</a>
+  <a href="#depoimentos">Depoimentos</a>
+  <a href="#instagram">Instagram</a>
+  <a href="#planos">Planos</a>
+  <a href="#faq">FAQ</a>
+  <a href="https://wa.me/5582988458845?text=Olá%20Rinaldo%2C%20quero%20saber%20mais" target="_blank" rel="noopener">Falar no WhatsApp →</a>
+</div>
 
+<!-- ═══ STICKY PRICING BAR ═══ -->
+<div class="sticky-plans-bar" id="stickyBar">
+  <p class="sticky-plans-bar-text">
+    <strong>Vagas abertas este mês.</strong> Start a partir de R$ 650 · Trimestral · Semestral VIP
+  </p>
+  <a href="https://wa.me/5582988458845?text=Olá%20Rinaldo%2C%20quero%20ver%20os%20planos" target="_blank" rel="noopener" class="sticky-plans-bar-cta" id="stickyBarCta">Ver Planos →</a>
+  <button class="sticky-plans-bar-close" id="stickyBarClose" aria-label="Fechar">×</button>
+</div>
 <section class="hero">
-  <div class="hero-content">
-    <div class="tagline reveal">Especialista em Composição Corporal</div>
-    <h1 class="reveal" style="transition-delay: 0.1s;">A Ciência dos<br><span>Campeões.</span></h1>
-    <p class="reveal" style="transition-delay: 0.2s;">Para pessoas entre 30 e 50 anos que têm agenda cheia e tolerância zero para métodos baseados em achismo. Um protocolo matemático e adaptável para sua fisiologia.</p>
-    <div class="reveal" style="transition-delay: 0.3s;">
-      <a href="#" class="btn-primary">Iniciar Diagnóstico</a>
+  <div class="hero-main">
+    <div class="hero-left">
+      <div>
+        <div class="hero-tag">Nutricionista & Cofundador Health Compass</div>
+        <h1 class="hero-h1">
+          <span class="italic-line">Você não precisa de uma consulta,</span>
+          PRECISA<br>DE UM<br>GUIA.
+        </h1>
+      </div>
+      <div class="hero-sub-row">
+        <p class="hero-desc">
+          <strong>80% dos meus pacientes não são atletas.</strong> São pessoas entre 30 e 50 anos com agenda cheia, pouco tempo e zero tolerância para método que não funciona. Há quase 10 anos, aplico a mesma ciência dos <strong>campeões mundiais</strong> à rotina de quem precisa de resultado — não de promessa.
+        </p>
+        <div class="hero-btns">
+          <a href="https://wa.me/5582988458845?text=Olá%20Rinaldo%2C%20quero%20começar%20o%20acompanhamento%20nutricional" target="_blank" rel="noopener" class="btn-solid">Quero começar →</a>
+          <a href="#metodologia" class="btn-outline">Ver metodologia</a>
+          <div class="scroll-hint">Role para explorar</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-right">
+      <div class="hero-photo-bg"></div>
+      <img class="hero-photo"
+           src="https://jrcaporal-cloud.github.io/curso-antropometria/projetos/assessoria-nutricional/v2/rinaldo-terno.png"
+           alt="Rinaldo Caporal"
+           onerror="this.style.opacity='0'">
+      <div class="photo-label">Rinaldo Caporal — Nutricionista</div>
     </div>
   </div>
-  <div class="hero-visual">
-    <img src="https://jrcaporal-cloud.github.io/curso-antropometria/projetos/assessoria-nutricional/v2/rinaldo-terno.png" alt="Rinaldo Caporal">
-  </div>
-</section>
 
-<section id="metodo" class="bento-section">
-  <h2 class="section-title reveal"><em>O Sistema</em><br>Não é Dieta, É engenharia.</h2>
-  
-  <div class="bento-grid">
-    <div class="bento-card large reveal">
-      <div class="bento-number">01</div>
-      <div>
-        <h3 class="bento-title">Previsibilidade Matemática</h3>
-        <p class="bento-desc"><br>Convertendo a incerteza do metabolismo em dados precisos. Integração de rotina, treino (LPO, Combate ou Hipertrofia) e descanso estruturados para garantir que você saiba exatamente quando o resultado vai chegar.</p>
-      </div>
+  <div class="hero-stats">
+    <div class="stat-cell" data-count="10" data-suffix="+">
+      <div class="stat-n">10<sub>+</sub></div>
+      <div class="stat-lbl">Anos de<br>Experiência</div>
     </div>
-    <div class="bento-card reveal">
-      <div class="bento-number">02</div>
-      <div>
-        <h3 class="bento-title">Tecnologia Integrada</h3>
-        <p class="bento-desc"><br>Acompanhamento guiado pelo <strong>Health Compass</strong>. Os dados da sua semana ditam os ajustes da próxima, eliminando o "platô" antes dele acontecer.</p>
-      </div>
+    <div class="stat-cell" data-count="3000" data-suffix="+">
+      <div class="stat-n">3k<sub>+</sub></div>
+      <div class="stat-lbl">Pacientes<br>Atendidos</div>
     </div>
-    <div class="bento-card reveal">
-      <div class="bento-number">03</div>
-      <div>
-        <h3 class="bento-title">ISAK Nível 2</h3>
-        <p class="bento-desc"><br>Mensuração de padrão internacional. Esqueça balanças de bioimpedância falhas. Acompanhamento rigoroso da dobra cutânea e simetria muscular.</p>
-      </div>
-    </div>
-    <div class="bento-card tall reveal">
-      <div class="bento-number">04</div>
-      <div>
-        <h3 class="bento-title">Esportes & Alto Rendimento</h3>
-        <p class="bento-desc"><br>O mesmo rigor aplicado ao corte de peso de atletas do UFC e da IFBJJ, adaptado à realidade da sua rotina corporativa.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="planos" class="pricing-section">
-  <h2 class="section-title reveal"><em>Seu Próximo Passo</em><br>Planos de Elite.</h2>
-  
-  <div class="pricing-grid">
-    <div class="plan-card reveal">
-      <div class="plan-name">Diagnóstico Start</div>
-      <div class="plan-price"><span>R$</span>650</div>
-      <ul class="plan-features">
-        <li>Consulta de mapeamento profundo (90 min)</li>
-        <li>1 Mês de acompanhamento inicial</li>
-        <li>Acesso ao Health Compass</li>
-        <li>Ajustes quinzenais de rotina</li>
-      </ul>
-      <a href="#" class="btn-primary" style="width: 100%; border-color: var(--border); background: transparent; color: var(--text-main);">Verificar Vagas</a>
-    </div>
-
-    <div class="plan-card vip reveal" style="transition-delay: 0.1s;">
-      <div class="plan-name">Semestral VIP (Recomendado)</div>
-      <div class="plan-price" style="color: var(--accent);"><span>R$</span>2.350</div>
-      <ul class="plan-features">
-        <li style="color: var(--text-main); font-weight: 500;">Transformação Permanente</li>
-        <li>3 consultas presenciais ou online</li>
-        <li>Acompanhamento e ajuste semanal rigoroso</li>
-        <li>Calls de emergência On-Demand</li>
-        <li>Bônus de renovação vitalício</li>
-      </ul>
-      <a href="#" class="btn-primary" style="width: 100%;">Aplicar para o VIP</a>
-    </div>
-
-    <div class="plan-card reveal" style="transition-delay: 0.2s;">
-      <div class="plan-name">Trimestral</div>
-      <div class="plan-price"><span>R$</span>1.300</div>
-      <ul class="plan-features">
-        <li>2 consultas de acompanhamento</li>
-        <li>Revisão semanal na plataforma</li>
-        <li>Suporte contínuo para ajustes de treino</li>
-        <li>Economia na adesão via Pix</li>
-      </ul>
-      <a href="#" class="btn-primary" style="width: 100%; border-color: var(--border); background: transparent; color: var(--text-main);">Verificar Vagas</a>
+    <div class="stat-cell" data-count="85" data-suffix="%">
+      <div class="stat-n">85<sub>%</sub></div>
+      <div class="stat-lbl">Taxa de<br>Renovação</div>
     </div>
   </div>
 </section>
+
+<!-- ═══ ATHLETES ═══ -->
+<section id="atletas">
+  <div class="section-header">
+    <span class="section-kicker">Quem confia no método</span>
+    <div class="section-rule"></div>
+    <h2 class="section-title-lg">Atletas de Elite</h2>
+  </div>
+
+  <div class="athletes-grid">
+    <div class="athlete-cell sr">
+      <img src="https://jrcaporal-cloud.github.io/curso-antropometria/projetos/assessoria-nutricional/v2/irmais-funegra.png" alt="Irmãs Funegra" onerror="this.style.opacity='0'">
+      <div class="athlete-overlay">
+        <div class="ath-name">Irmãs Funegra</div>
+        <div class="ath-title">Múltiplas campeãs mundiais IBJJF</div>
+      </div>
+      <div class="athlete-strip">
+        <span class="as-name">Irmãs Funegra</span>
+        <span class="as-sport">IBJJF</span>
+      </div>
+    </div>
+    <div class="athlete-cell sr">
+      <img src="https://jrcaporal-cloud.github.io/curso-antropometria/projetos/assessoria-nutricional/v2/andrea-cavalcante.png" alt="Andréia Cavalcante" onerror="this.style.opacity='0'">
+      <div class="athlete-overlay">
+        <div class="ath-name">Andréia Cavalcante</div>
+        <div class="ath-title">Nº 1 do mundo AJP</div>
+      </div>
+      <div class="athlete-strip">
+        <span class="as-name">Andréia Cavalcante</span>
+        <span class="as-sport">AJP / Nº 1</span>
+      </div>
+    </div>
+    <div class="athlete-cell sr">
+      <img src="https://jrcaporal-cloud.github.io/curso-antropometria/projetos/assessoria-nutricional/v2/christian-thier.png" alt="Christian Thier" onerror="this.style.opacity='0'">
+      <div class="athlete-overlay">
+        <div class="ath-name">Christian Thier</div>
+        <div class="ath-title">Recordista Kettlebell Sport</div>
+      </div>
+      <div class="athlete-strip">
+        <span class="as-name">Christian Thier</span>
+        <span class="as-sport">Kettlebell</span>
+      </div>
+    </div>
+    <div class="athlete-cell sr">
+      <img src="https://jrcaporal-cloud.github.io/curso-antropometria/projetos/assessoria-nutricional/v2/atleta-ibjjf.png" alt="Carol Vallejo" onerror="this.style.opacity='0'">
+      <div class="athlete-overlay">
+        <div class="ath-name">Carol Vallejo</div>
+        <div class="ath-title">Campeã mundial IBJJF</div>
+      </div>
+      <div class="athlete-strip">
+        <span class="as-name">Carol Vallejo</span>
+        <span class="as-sport">IBJJF</span>
+      </div>
+    </div>
+    <div class="athlete-cell sr">
+      <img src="https://jrcaporal-cloud.github.io/curso-antropometria/projetos/assessoria-nutricional/v2/atleta-powerlifting-fem.png" alt="Amanda Magalhães" onerror="this.style.opacity='0'">
+      <div class="athlete-overlay">
+        <div class="ath-name">Amanda Magalhães</div>
+        <div class="ath-title">Atleta de Powerlifting do Rio</div>
+      </div>
+      <div class="athlete-strip">
+        <span class="as-name">Amanda Magalhães</span>
+        <span class="as-sport">Powerlifting</span>
+      </div>
+    </div>
+    <div class="athlete-cell sr">
+      <img src="https://jrcaporal-cloud.github.io/curso-antropometria/projetos/assessoria-nutricional/v2/atleta-powerlifting-masc.png" alt="André Garcia" onerror="this.style.opacity='0'">
+      <div class="athlete-overlay">
+        <div class="ath-name">André Garcia</div>
+        <div class="ath-title">Campeão mundial de Powerlifting</div>
+      </div>
+      <div class="athlete-strip">
+        <span class="as-name">André Garcia</span>
+        <span class="as-sport">Powerlifting</span>
+      </div>
+    </div>
+    <div class="athlete-cell sr">
+      <img src="https://jrcaporal-cloud.github.io/curso-antropometria/projetos/assessoria-nutricional/v2/atleta-ufc.png" alt="Lara Procopio" onerror="this.style.opacity='0'">
+      <div class="athlete-overlay">
+        <div class="ath-name">Lara Procopio</div>
+        <div class="ath-title">Atleta do UFC</div>
+      </div>
+      <div class="athlete-strip">
+        <span class="as-name">Lara Procopio</span>
+        <span class="as-sport">UFC</span>
+      </div>
+    </div>
+    <div class="athlete-cell sr">
+      <img src="https://jrcaporal-cloud.github.io/curso-antropometria/projetos/assessoria-nutricional/v2/andre-garcia.png" alt="Wilhiam Mateus" onerror="this.style.opacity='0'">
+      <div class="athlete-overlay">
+        <div class="ath-name">Wilhiam Mateus</div>
+        <div class="ath-title">Atleta de Jiu-Jitsu</div>
+      </div>
+      <div class="athlete-strip">
+        <span class="as-name">Wilhiam Mateus</span>
+        <span class="as-sport">Jiu-Jitsu</span>
+      </div>
+    </div>
+  </div><!-- /athletes-grid -->
+
+  <!-- Mobile carousel (infinite) -->
+  <div class="athletes-carousel" id="athletesCarousel">
+    <div class="carousel-track" id="carouselTrack">
+      <!-- Original set -->
+      <div class="carousel-slide">
+        <img src="https://jrcaporal-cloud.github.io/curso-antropometria/projetos/assessoria-nutricional/v2/irmais-funegra.png" alt="Irmãs Funegra" onerror="this.style.opacity='0'">
+        <div class="athlete-overlay"><div class="ath-name">Irmãs Funegra</div><div class="ath-title">Múltiplas campeãs mundiais IBJJF</div></div>
+        <div class="athlete-strip"><span class="as-name">Irmãs Funegra</span><span class="as-sport">IBJJF</span></div>
+      </div>
+      <div class="carousel-slide">
+        <img src="https://jrcaporal-cloud.github.io/curso-antropometria/projetos/assessoria-nutricional/v2/andrea-cavalcante.png" alt="Andréia Cavalcante" onerror="this.style.opacity='0'">
+        <div class="athlete-overlay"><div class="ath-name">Andréia Cavalcante</div><div class="ath-title">Nº 1 do mundo AJP</div></div>
+        <div class="athlete-strip"><span class="as-name">Andréia Cavalcante</span><span class="as-sport">AJP / Nº 1</span></div>
+      </div>
+      <div class="carousel-slide">
+        <img src="https://jrcaporal-cloud.github.io/curso-antropometria/projetos/assessoria-nutricional/v2/christian-thier.png" alt="Christian Thier" onerror="this.style.opacity='0'">
+        <div class="athlete-overlay"><div class="ath-name">Christian Thier</div><div class="ath-title">Recordista Kettlebell Sport</div></div>
+        <div class="athlete-strip"><span class="as-name">Christian Thier</span><span class="as-sport">Kettlebell</span></div>
+      </div>
+      <div class="carousel-slide">
+        <img src="https://jrcaporal-cloud.github.io/curso-antropometria/projetos/assessoria-nutricional/v2/atleta-ibjjf.png" alt="Carol Vallejo" onerror="this.style.opacity='0'">
+        <div class="athlete-overlay"><div class="ath-name">Carol Vallejo</div><div class="ath-title">Campeã mundial IBJJF</div></div>
+        <div class="athlete-strip"><span class="as-name">Carol Vallejo</span><span class="as-sport">IBJJF</span></div>
+      </div>
+      <div class="carousel-slide">
+        <img src="https://jrcaporal-cloud.github.io/curso-antropometria/projetos/assessoria-nutricional/v2/atleta-powerlifting-fem.png" alt="Amanda Magalhães" onerror="this.style.opacity='0'">
+        <div class="athlete-overlay"><div class="ath-name">Amanda Magalhães</div><div class="ath-title">Atleta de Powerlifting</div></div>
+        <div class="athlete-strip"><span class="as-name">Amanda Magalhães</span><span class="as-sport">Powerlifting</span></div>
+      </div>
+      <div class="carousel-slide">
+        <img src="https://jrcaporal-cloud.github.io/curso-antropometria/projetos/assessoria-nutricional/v2/atleta-powerlifting-masc.png" alt="André Garcia" onerror="this.style.opacity='0'">
+        <div class="athlete-overlay"><div class="ath-name">André Garcia</div><div class="ath-title">Campeão mundial de Powerlifting</div></div>
+        <div class="athlete-strip"><span class="as-name">André Garcia</span><span class="as-sport">Powerlifting</span></div>
+      </div>
+      <div class="carousel-slide">
+        <img src="https://jrcaporal-cloud.github.io/curso-antropometria/projetos/assessoria-nutricional/v2/atleta-ufc.png" alt="Lara Procopio" onerror="this.style.opacity='0'">
+        <div class="athlete-overlay"><div class="ath-name">Lara Procopio</div><div class="ath-title">Atleta do UFC</div></div>
+        <div class="athlete-strip"><span class="as-name">Lara Procopio</span><span class="as-sport">UFC</span></div>
+      </div>
+      <div class="carousel-slide">
+        <img src="https://jrcaporal-cloud.github.io/curso-antropometria/projetos/assessoria-nutricional/v2/andre-garcia.png" alt="Wilhiam Mateus" onerror="this.style.opacity='0'">
+        <div class="athlete-overlay"><div class="ath-name">Wilhiam Mateus</div><div class="ath-title">Atleta de Jiu-Jitsu</div></div>
+        <div class="athlete-strip"><span class="as-name">Wilhiam Mateus</span><span class="as-sport">Jiu-Jitsu</span></div>
+      </div>
+      <!-- Duplicate set for seamless loop -->
+      <div class="carousel-slide">
+        <img src="https://jrcaporal-cloud.github.io/curso-antropometria/projetos/assessoria-nutricional/v2/irmais-funegra.png" alt="Irmãs Funegra" onerror="this.style.opacity='0'">
+        <div class="athlete-overlay"><div class="ath-name">Irmãs Funegra</div><div class="ath-title">Múltiplas campeãs mundiais IBJJF</div></div>
+        <div class="athlete-strip"><span class="as-name">Irmãs Funegra</span><span class="as-sport">IBJJF</span></div>
+      </div>
+      <div class="carousel-slide">
+        <img src="https://jrcaporal-cloud.github.io/curso-antropometria/projetos/assessoria-nutricional/v2/andrea-cavalcante.png" alt="Andréia Cavalcante" onerror="this.style.opacity='0'">
+        <div class="athlete-overlay"><div class="ath-name">Andréia Cavalcante</div><div class="ath-title">Nº 1 do mundo AJP</div></div>
+        <div class="athlete-strip"><span class="as-name">Andréia Cavalcante</span><span class="as-sport">AJP / Nº 1</span></div>
+      </div>
+      <div class="carousel-slide">
+        <img src="https://jrcaporal-cloud.github.io/curso-antropometria/projetos/assessoria-nutricional/v2/christian-thier.png" alt="Christian Thier" onerror="this.style.opacity='0'">
+        <div class="athlete-overlay"><div class="ath-name">Christian Thier</div><div class="ath-title">Recordista Kettlebell Sport</div></div>
+        <div class="athlete-strip"><span class="as-name">Christian Thier</span><span class="as-sport">Kettlebell</span></div>
+      </div>
+      <div class="carousel-slide">
+        <img src="https://jrcaporal-cloud.github.io/curso-antropometria/projetos/assessoria-nutricional/v2/atleta-ibjjf.png" alt="Carol Vallejo" onerror="this.style.opacity='0'">
+        <div class="athlete-overlay"><div class="ath-name">Carol Vallejo</div><div class="ath-title">Campeã mundial IBJJF</div></div>
+        <div class="athlete-strip"><span class="as-name">Carol Vallejo</span><span class="as-sport">IBJJF</span></div>
+      </div>
+      <div class="carousel-slide">
+        <img src="https://jrcaporal-cloud.github.io/curso-antropometria/projetos/assessoria-nutricional/v2/atleta-powerlifting-fem.png" alt="Amanda Magalhães" onerror="this.style.opacity='0'">
+        <div class="athlete-overlay"><div class="ath-name">Amanda Magalhães</div><div class="ath-title">Atleta de Powerlifting</div></div>
+        <div class="athlete-strip"><span class="as-name">Amanda Magalhães</span><span class="as-sport">Powerlifting</span></div>
+      </div>
+      <div class="carousel-slide">
+        <img src="https://jrcaporal-cloud.github.io/curso-antropometria/projetos/assessoria-nutricional/v2/atleta-powerlifting-masc.png" alt="André Garcia" onerror="this.style.opacity='0'">
+        <div class="athlete-overlay"><div class="ath-name">André Garcia</div><div class="ath-title">Campeão mundial de Powerlifting</div></div>
+        <div class="athlete-strip"><span class="as-name">André Garcia</span><span class="as-sport">Powerlifting</span></div>
+      </div>
+      <div class="carousel-slide">
+        <img src="https://jrcaporal-cloud.github.io/curso-antropometria/projetos/assessoria-nutricional/v2/atleta-ufc.png" alt="Lara Procopio" onerror="this.style.opacity='0'">
+        <div class="athlete-overlay"><div class="ath-name">Lara Procopio</div><div class="ath-title">Atleta do UFC</div></div>
+        <div class="athlete-strip"><span class="as-name">Lara Procopio</span><span class="as-sport">UFC</span></div>
+      </div>
+      <div class="carousel-slide">
+        <img src="https://jrcaporal-cloud.github.io/curso-antropometria/projetos/assessoria-nutricional/v2/andre-garcia.png" alt="Wilhiam Mateus" onerror="this.style.opacity='0'">
+        <div class="athlete-overlay"><div class="ath-name">Wilhiam Mateus</div><div class="ath-title">Atleta de Jiu-Jitsu</div></div>
+        <div class="athlete-strip"><span class="as-name">Wilhiam Mateus</span><span class="as-sport">Jiu-Jitsu</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="metodologia">
+  <div class="section-header">
+    <span class="section-kicker">A Metodologia</span>
+    <div class="section-rule"></div>
+    <h2 class="section-title-lg sr">Onde Ciência Encontra Resultado</h2>
+  </div>
+
+  <div class="method-intro">
+    <div class="method-intro-left sr-l">
+      <p class="method-big-text">
+        Você já seguiu dieta, contratou personal, tomou suplemento — e mesmo assim continua no mesmo lugar. O problema <em>não é falta de esforço.</em> É falta de método. Aqui, você não recebe uma lista de alimentos. Você recebe um sistema.
+      </p>
+    </div>
+    <div class="method-intro-right sr">
+      <p>A mesma ciência que leva atletas a pódios mundiais pode ser calibrada para a sua rotina — com a mesma precisão, sem abrir mão da sua vida. Não serei um consultor que aponta a direção e cruza os dedos. Serei o guia que vai na frente.</p>
+      <a href="https://wa.me/5582988458845?text=Olá%20Rinaldo%2C%20quero%20saber%20mais%20sobre%20os%20planos" target="_blank" rel="noopener" class="btn-solid" style="margin-top:32px; align-self:flex-start">Ver planos →</a>
+    </div>
+  </div>
+
+  <div class="method-items">
+    <div class="method-item sr">
+      <div class="mi-num">01</div>
+      <div class="mi-tag">Princípio I</div>
+      <div class="mi-title">Previsibilidade<br>Matemática</div>
+      <p class="mi-body">Cansado de "comer bem" e não ver resultado? O problema é que sem dados, você está adivinhando. Transformamos a incerteza da dieta em protocolo exato — com metas, prazos e margem de erro próxima a zero. Você para de tentar e começa a saber.</p>
+    </div>
+    <div class="method-item sr">
+      <div class="mi-num">02</div>
+      <div class="mi-tag">Princípio II</div>
+      <div class="mi-title">Nutrição que<br>Aprende com<br>Você</div>
+      <p class="mi-body">Seu corpo muda. Seu protocolo também. A cada semana, novos dados — sono, peso, energia, treino — alimentam ajustes em tempo real. Não existe versão final do seu plano, porque não existe versão final do seu corpo. Quanto mais avançamos juntos, mais preciso o protocolo fica. É a diferença entre seguir uma dieta e ter um sistema que evolui com você.</p>
+    </div>
+    <div class="method-item sr">
+      <div class="mi-num">03</div>
+      <div class="mi-tag">Princípio III</div>
+      <div class="mi-title">Blindagem<br>de Rotina</div>
+      <p class="mi-body">Sua agenda não tem espaço para mais uma tarefa. Então não criamos uma nova — integramos o protocolo ao que você já faz. O processo é tão fluido que cuidar da saúde deixa de ser esforço e vira consequência da sua rotina normal.</p>
+    </div>
+    <div class="method-item sr">
+      <div class="mi-num">04</div>
+      <div class="mi-tag">Princípio IV</div>
+      <div class="mi-title">Vitalidade<br>Antifrágil</div>
+      <p class="mi-body">Energia baixa, sono ruim, recuperação lenta — esses não são sinais de envelhecimento. São sinais de fisiologia mal calibrada. Ajustamos sono, estresse e recuperação para que seu corpo responda como uma máquina de alta performance — independentemente da sua idade.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ PARA QUEM É ═══ -->
+<section id="para-quem" style="border-top:1.5px solid var(--ink); background:var(--ink); color:var(--paper);">
+  <div class="section-header" style="border-bottom-color:rgba(240,237,230,.12);">
+    <span class="section-kicker" style="color:#E8C97A;">Para quem é</span>
+    <div class="section-rule" style="background:rgba(240,237,230,.12);"></div>
+    <h2 class="section-title-lg sr" style="color:var(--paper);">Este Método é Para Você</h2>
+  </div>
+
+  <div class="para-quem-grid">
+    <div class="para-quem-quote sr-l">
+      <p style="font-family:var(--serif); font-style:italic; font-size:clamp(22px,2.4vw,34px); font-weight:300; line-height:1.4; color:rgba(240,237,230,.85);">
+        "Se você tem entre 30 e 50 anos, trabalha muito, mal tem tempo de almoçar direito e quer parar de improvisar com a sua saúde —
+        <span style="color:#E8C97A; font-style:normal; font-weight:700;"> você é exatamente o meu paciente.</span>"
+      </p>
+      <p style="font-family:var(--mono); font-size:11px; letter-spacing:2px; text-transform:uppercase; color:rgba(240,237,230,.3); margin-top:28px;">— Rinaldo Caporal</p>
+    </div>
+    <div class="para-quem-cards sr">
+      <div style="background:var(--ink); padding:28px 24px;">
+        <div style="font-family:var(--cond); font-weight:900; font-size:15px; text-transform:uppercase; letter-spacing:1px; color:#E8C97A; margin-bottom:10px;">✓ É para você se</div>
+        <ul style="list-style:none; font-family:var(--mono); font-size:13px; line-height:1.9; color:rgba(240,237,230,.65);">
+          <li>Sua rotina é caótica e imprevisível</li>
+          <li>Já tentou dieta mais de duas vezes</li>
+          <li>Quer resultado, não teoria</li>
+          <li>Tem 30, 40 ou 50 anos</li>
+          <li>Treina mas não vê evolução</li>
+        </ul>
+      </div>
+      <div style="background:var(--ink); padding:28px 24px; border-left:1px solid rgba(240,237,230,.08);">
+        <div style="font-family:var(--cond); font-weight:900; font-size:15px; text-transform:uppercase; letter-spacing:1px; color:rgba(240,237,230,.3); margin-bottom:10px;">✗ Não é para você se</div>
+        <ul style="list-style:none; font-family:var(--mono); font-size:13px; line-height:1.9; color:rgba(240,237,230,.35);">
+          <li>Quer receita mágica rápida</li>
+          <li>Não está disposto a reportar</li>
+          <li>Prefere adivinhar a medir</li>
+          <li>Busca motivação, não método</li>
+          <li>Quer plano genérico de internet</li>
+        </ul>
+      </div>
+      <div style="background:var(--ink); padding:28px 24px; grid-column:1/-1; border-top:1px solid rgba(240,237,230,.08); display:flex; align-items:center; justify-content:space-between; gap:16px; flex-wrap:wrap;">
+        <p style="font-family:var(--mono); font-size:13px; color:rgba(240,237,230,.5); line-height:1.6;">
+          <span style="color:#E8C97A; font-weight:500;">Vagas limitadas.</span> Atendo um número restrito de pacientes por mês para garantir a qualidade do acompanhamento individual.
+        </p>
+        <a href="#planos" style="background:var(--red); color:var(--paper); padding:12px 24px; font-family:var(--mono); font-size:10px; letter-spacing:2px; text-transform:uppercase; white-space:nowrap; flex-shrink:0; transition:background .2s;" onmouseover="this.style.background='#A02C18'" onmouseout="this.style.background='var(--red)'">Ver vagas →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ PRICING ═══ -->
+<section id="planos">
+  <div class="section-header">
+    <span class="section-kicker">Investimento</span>
+    <div class="section-rule"></div>
+    <h2 class="section-title-lg sr">Escolha seu Plano</h2>
+  </div>
+
+  <div class="pricing-cols">
+    <div class="pricing-intro-col sr-l">
+      <div>
+        <h3 class="pricing-intro-headline">
+          <em>Invista em</em>
+          RESULTADO
+        </h3>
+        <p class="pricing-note">Todos os planos incluem acesso à plataforma Health Compass e acompanhamento personalizado. <strong style="color:var(--ink);">Vagas limitadas por mês</strong> — o acompanhamento individual exige isso.</p>
+        <div class="pricing-improviso">
+          <p>A maioria dos meus pacientes chegou aqui depois de <strong>gastar mais do que isso</strong> tentando sozinho — suplementos, dietas compradas, consultas avulsas sem continuidade.</p>
+        </div>
+      </div>
+      <a href="https://wa.me/5582988458845?text=Olá%20Rinaldo%2C%20quero%20iniciar%20o%20acompanhamento%20nutricional" target="_blank" rel="noopener" class="btn-solid" style="align-self:flex-start; margin-top:40px">Falar com Rinaldo →</a>
+    </div>
+
+    <!-- Diagnóstico (ex-Start) -->
+    <div class="plan-col sr">
+      <div class="plan-head">
+        <div class="plan-badge-label">Plano 01</div>
+        <div class="plan-name">Diagnóstico</div>
+        <div class="plan-tagline">Para quem quer parar de adivinhar. Um diagnóstico honesto, um ponto de partida claro — e nenhum achismo.</div>
+      </div>
+      <div class="plan-price-block">
+        <div class="plan-price-big"><small>R$</small>650</div>
+        <div class="plan-daily">R$ 21/dia</div>
+      </div>
+      <ul class="plan-features-list">
+        <li>Consulta de 60–90 min para mapear tudo</li>
+        <li>1 mês sem ficar perdido entre consultas</li>
+        <li>Revisão quinzenal — sem esperar 1 mês para ajustar</li>
+        <li>Plataforma Health Compass inclusa</li>
+      </ul>
+      <div class="plan-cta-wrap">
+        <a href="https://wa.me/5582988458845?text=Olá%20Rinaldo%2C%20tenho%20interesse%20no%20Plano%20Diagnóstico" target="_blank" rel="noopener" class="plan-btn-dark">Quero clareza →</a>
+      </div>
+    </div>
+
+    <!-- Trimestral -->
+    <div class="plan-col sr">
+      <div class="plan-head">
+        <div class="plan-badge-label">Plano 02</div>
+        <div class="plan-name">Trimestral</div>
+        <div class="plan-tagline">O tempo mínimo para mudar composição corporal com consistência. Não tem atalho — mas tem método.</div>
+      </div>
+      <div class="plan-price-block">
+        <div class="plan-price-big"><small>R$</small>1.300</div>
+        <div class="plan-discount-badge">Pix/à vista — economia de R$ 98</div>
+        <div class="plan-price-secondary">ou 3× R$ 466 no cartão</div>
+        <div class="plan-daily">R$ 14/dia</div>
+      </div>
+      <ul class="plan-features-list">
+        <li>2 consultas — sem depender de 1 olhada por trimestre</li>
+        <li>3 meses sem largar na metade do processo</li>
+        <li>Revisão semanal — ajuste antes de você sentir o problema</li>
+        <li>Plataforma Health Compass inclusa</li>
+      </ul>
+      <div class="plan-cta-wrap">
+        <a href="https://wa.me/5582988458845?text=Olá%20Rinaldo%2C%20tenho%20interesse%20no%20Plano%20Trimestral" target="_blank" rel="noopener" class="plan-btn-dark">Quero evoluir →</a>
+      </div>
+    </div>
+
+    <!-- VIP -->
+    <div class="plan-col featured sr">
+      <div class="plan-head">
+        <div class="plan-badge-label">A escolha dos campeões</div>
+        <div class="plan-name">Semestral VIP</div>
+        <div class="plan-tagline">Para quem quer chegar lá — e nunca mais voltar ao ponto de partida. Resultado permanente, suporte de elite.</div>
+      </div>
+      <div class="plan-price-block">
+        <div class="plan-price-big"><small>R$</small>2.350</div>
+        <div class="plan-discount-badge">Pix/à vista — economia de R$ 248</div>
+        <div class="plan-price-secondary">ou 6× R$ 433 no cartão</div>
+        <div class="plan-daily">R$ 13/dia</div>
+      </div>
+      <div class="plan-vip-highlight">
+        <div class="plan-vip-highlight-icon">📲</div>
+        <div class="plan-vip-highlight-text">
+          <strong>Acesso direto on-demand</strong>
+          3 videochamadas sem agenda — você me chama quando precisar, não quando a agenda permitir.
+        </div>
+      </div>
+      <ul class="plan-features-list">
+        <li>3 consultas em 6 meses de acompanhamento</li>
+        <li>Revisão semanal — sem ficar sozinho em nenhuma semana</li>
+        <li>Análise avançada de treino integrada à nutrição</li>
+        <li>Bônus de renovação R$ 500 — para quem fica</li>
+        <li>Plataforma Health Compass inclusa</li>
+      </ul>
+      <div class="plan-cta-wrap">
+        <a href="https://wa.me/5582988458845?text=Olá%20Rinaldo%2C%20tenho%20interesse%20no%20Plano%20Semestral%20VIP" target="_blank" rel="noopener" class="plan-btn-light">Ser VIP →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ TESTIMONIALS ═══ -->
+<section id="depoimentos">
+  <div class="section-header">
+    <span class="section-kicker">Quem já chegou lá</span>
+    <div class="section-rule"></div>
+    <h2 class="section-title-lg sr">Pacientes Reais.<br>Resultados Reais.</h2>
+  </div>
+
+  <div class="testi-grid-wrap">
+
+    <div class="testi-card sr">
+      <div class="testi-quote-mark">"</div>
+      <div>
+        <div class="testi-result">−11kg</div>
+        <div class="testi-result-label">em 14 semanas · sem academia diária</div>
+      </div>
+      <p class="testi-text">Eu tinha tentado emagrecer umas quatro vezes. Fiz dieta low-carb, jejum, fui a outros nutricionistas. Sempre perdia alguns quilos e voltava tudo em dois meses. Com o Rinaldo foi diferente desde a primeira semana — ele não me deu uma lista de alimentos, ele entendeu a minha rotina. Hoje estou 11 quilos mais leve e não sinto que estou "fazendo dieta".</p>
+      <div class="testi-author">
+        <span class="testi-name">Fábio Mendonça</span>
+        <span class="testi-role">Empresário, 44 anos — São Paulo</span>
+        <span class="testi-plan">Plano Semestral VIP · 6 meses de acompanhamento</span>
+      </div>
+    </div>
+
+    <div class="testi-card sr">
+      <div class="testi-quote-mark">"</div>
+      <div>
+        <div class="testi-result">+3kg</div>
+        <div class="testi-result-label">de massa magra · sem uso de suplementos</div>
+      </div>
+      <p class="testi-text">Meu problema não era emagrecer — era não conseguir ganhar músculo mesmo treinando há três anos. O Rinaldo identificou em duas semanas onde estava o erro: eu comia pouco antes do treino e dormia mal. Ajustamos isso e em três meses o resultado foi visível. Minha academia perguntou se eu tinha mudado de treino. Não mudei nada — só a nutrição.</p>
+      <div class="testi-author">
+        <span class="testi-name">Camila Rocha</span>
+        <span class="testi-role">Advogada, 37 anos — Maceió</span>
+        <span class="testi-plan">Plano Trimestral · renovado por mais 3 meses</span>
+      </div>
+    </div>
+
+    <div class="testi-card sr">
+      <div class="testi-quote-mark">"</div>
+      <div>
+        <div class="testi-result">−7kg</div>
+        <div class="testi-result-label">de energia recuperada · menos inflamação crônica</div>
+      </div>
+      <p class="testi-text">Aos 49 anos, eu acordava cansada mesmo dormindo 8 horas. Médico disse que estava tudo "normal". O Rinaldo olhou minha alimentação e meu histórico de rotina e viu o que nenhum exame mostrou. Quatro meses depois, acordo com disposição, minha pressão normalizou e perdi 7kg que eu nem sabia que precisava perder. Método sem achismo — é isso.</p>
+      <div class="testi-author">
+        <span class="testi-name">Rosana Vasconcelos</span>
+        <span class="testi-role">Professora universitária, 49 anos — Maceió</span>
+        <span class="testi-plan">Plano Semestral VIP · em renovação</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ═══ INSTAGRAM ═══ -->
+<section id="instagram">
+  <div class="section-header">
+    <span class="section-kicker">Acompanhe o dia a dia</span>
+    <div class="section-rule"></div>
+    <h2 class="section-title-lg sr">No Instagram</h2>
+  </div>
+  <div class="ig-grid">
+
+    <!-- Card 1 -->
+    <a class="ig-card sr" href="https://instagram.com/rinaldocaporal" target="_blank" rel="noopener">
+      <div class="ig-card-bg" style="background:var(--cream); color:var(--ink);">
+        CORTE<br>DE<br>PESO
+      </div>
+      <div class="ig-card-overlay">
+        <div class="ig-overlay-icon">↗</div>
+        <div class="ig-overlay-label">Ver no Instagram</div>
+      </div>
+      <div class="ig-card-tag">Esportes de Combate</div>
+    </a>
+
+    <!-- Card 2 -->
+    <a class="ig-card sr" href="https://instagram.com/rinaldocaporal" target="_blank" rel="noopener">
+      <div class="ig-card-bg" style="background:#1a1a1a; color:var(--paper);">
+        ISAK<br>N2
+      </div>
+      <div class="ig-card-overlay">
+        <div class="ig-overlay-icon">↗</div>
+        <div class="ig-overlay-label">Ver no Instagram</div>
+      </div>
+      <div class="ig-card-tag">Antropometria</div>
+    </a>
+
+    <!-- Card 3 -->
+    <a class="ig-card sr" href="https://instagram.com/rinaldocaporal" target="_blank" rel="noopener">
+      <div class="ig-card-bg" style="background:var(--red); color:var(--paper);">
+        NUTRI<br>ÇÃO<br>QUE<br>FUNCIO<br>NA
+      </div>
+      <div class="ig-card-overlay">
+        <div class="ig-overlay-icon">↗</div>
+        <div class="ig-overlay-label">Ver no Instagram</div>
+      </div>
+      <div class="ig-card-tag">Método</div>
+    </a>
+
+    <!-- Card 4 — CTA -->
+    <a class="ig-cta-cell sr" href="https://instagram.com/rinaldocaporal" target="_blank" rel="noopener">
+      <div class="ig-cta-handle">@rinaldocaporal</div>
+      <p class="ig-cta-sub">Conteúdo técnico,<br>bastidores e resultados<br>reais no Instagram</p>
+      <div class="ig-cta-btn">Seguir →</div>
+    </a>
+
+    <!-- Card 5 -->
+    <a class="ig-card sr" href="https://instagram.com/rinaldocaporal" target="_blank" rel="noopener">
+      <div class="ig-card-bg" style="background:var(--ink); color:#E8C97A;">
+        POWER<br>LIFTING
+      </div>
+      <div class="ig-card-overlay">
+        <div class="ig-overlay-icon">↗</div>
+        <div class="ig-overlay-label">Ver no Instagram</div>
+      </div>
+      <div class="ig-card-tag">Força Máxima</div>
+    </a>
+
+    <!-- Card 6 -->
+    <a class="ig-card sr" href="https://instagram.com/rinaldocaporal" target="_blank" rel="noopener">
+      <div class="ig-card-bg" style="background:var(--cream); color:var(--ink);">
+        HEALTH<br>COMPASS
+      </div>
+      <div class="ig-card-overlay">
+        <div class="ig-overlay-icon">↗</div>
+        <div class="ig-overlay-label">Ver no Instagram</div>
+      </div>
+      <div class="ig-card-tag">Tecnologia</div>
+    </a>
+
+    <!-- Card 7 -->
+    <a class="ig-card sr" href="https://instagram.com/rinaldocaporal" target="_blank" rel="noopener">
+      <div class="ig-card-bg" style="background:#2a1a10; color:var(--paper);">
+        ALTO<br>RENDIMENTO
+      </div>
+      <div class="ig-card-overlay">
+        <div class="ig-overlay-icon">↗</div>
+        <div class="ig-overlay-label">Ver no Instagram</div>
+      </div>
+      <div class="ig-card-tag">Congresso · Palestra</div>
+    </a>
+
+    <!-- Card 8 -->
+    <a class="ig-card sr" href="https://instagram.com/rinaldocaporal" target="_blank" rel="noopener">
+      <div class="ig-card-bg" style="background:var(--red); color:var(--paper);">
+        −11KG<br>14<br>SEMANAS
+      </div>
+      <div class="ig-card-overlay">
+        <div class="ig-overlay-icon">↗</div>
+        <div class="ig-overlay-label">Ver no Instagram</div>
+      </div>
+      <div class="ig-card-tag">Resultado</div>
+    </a>
+
+  </div>
+</section>
+
+<!-- ═══ FAQ ═══ -->
+<section id="faq">
+  <div class="section-header">
+    <span class="section-kicker">Dúvidas</span>
+    <div class="section-rule"></div>
+    <h2 class="section-title-lg sr">Perguntas Frequentes</h2>
+  </div>
+
+  <div class="faq-layout">
+    <div class="faq-left sr-l">
+      <div class="faq-big">TEM<br><span class="red">DÚ-<br>VI&shy;DAS?</span></div>
+      <p class="faq-left-sub">Respondemos as perguntas mais comuns. Se ainda tiver dúvidas, entre em contato diretamente.</p>
+    </div>
+    <div class="faq-right">
+      <div class="faq-item sr">
+        <button class="faq-q">Não sou atleta, é para mim? <span class="faq-icon">+</span></button>
+        <div class="faq-a"><div class="faq-a-inner">Sim — e provavelmente é mais para você do que para os atletas. 80% dos meus pacientes são pessoas entre 30 e 50 anos buscando qualidade de vida e composição corporal. O esporte de elite me deu a ciência; pessoas comuns me deram a experiência de aplicar essa ciência em rotinas reais. <span style="color:var(--ink); font-weight:500;">Se você tem uma vida corrida e resultado travado, você é o perfil exato que atendo.</span></div></div>
+      </div>
+      <div class="faq-item sr">
+        <button class="faq-q">Tenho a vida corrida, vou conseguir? <span class="faq-icon">+</span></button>
+        <div class="faq-a"><div class="faq-a-inner">A metodologia foi desenhada especificamente para rotinas caóticas — não apesar delas. Não vai te pedir para cozinhar todo domingo ou acordar às 5h. Vai identificar onde estão seus maiores desperdícios e eliminá-los um a um. <span style="color:var(--ink); font-weight:500;">A agenda cheia não é um obstáculo aqui. É o ponto de partida.</span></div></div>
+      </div>
+      <div class="faq-item sr">
+        <button class="faq-q">Como sou avaliado à distância? <span class="faq-icon">+</span></button>
+        <div class="faq-a"><div class="faq-a-inner">Por relatórios semanais: fotos, peso, qualidade de sono e variações de rotina. Com esses dados, consigo antecipar resultados e fazer ajustes antes que você perceba o problema — não depois. <span style="color:var(--ink); font-weight:500;">Pacientes presenciais não têm mais resultado do que os meus pacientes remotos. Os dados falam mais do que a balança do consultório.</span></div></div>
+      </div>
+      <div class="faq-item sr">
+        <button class="faq-q">Você prescreve treino? <span class="faq-icon">+</span></button>
+        <div class="faq-a"><div class="faq-a-inner">Não prescrevo treino — mas analiso seus dados de treino em detalhe para que a nutrição potencialize cada estímulo de ganho muscular ou perda de gordura. Na prática, muitos pacientes percebem que a nutrição calibrada faz mais pelo resultado do treino do que uma mudança no próprio treino. <span style="color:var(--ink); font-weight:500;">O que você come define o quanto seu treino vai funcionar.</span></div></div>
+      </div>
+      <div class="faq-item sr">
+        <button class="faq-q">Como funciona o pagamento? <span class="faq-icon">+</span></button>
+        <div class="faq-a"><div class="faq-a-inner">O pagamento é feito integralmente no início do plano — à vista via Pix com desconto, ou parcelado em até 6x no cartão de crédito. Não há cobrança mensal recorrente automática: cada renovação é uma decisão sua. <span style="color:var(--ink); font-weight:500;">Você recebe os dados antes de renovar — sempre.</span></div></div>
+      </div>
+      <div class="faq-item sr">
+        <button class="faq-q">Atende fora de Maceió? <span class="faq-icon">+</span></button>
+        <div class="faq-a"><div class="faq-a-inner">Sim — o acompanhamento é 100% remoto e atendo pacientes em todo o Brasil. A consulta inicial é por videochamada e os check-ins semanais acontecem via plataforma Health Compass no WhatsApp. <span style="color:var(--ink); font-weight:500;">Pacientes remotos têm os mesmos resultados — os dados não mentem.</span></div></div>
+      </div>
+      <div class="faq-item sr">
+        <button class="faq-q">Em quanto tempo vejo resultado? <span class="faq-icon">+</span></button>
+        <div class="faq-a"><div class="faq-a-inner">Os primeiros sinais aparecem entre 2 e 3 semanas — mais energia, sono melhor, menos inchaço. Mudança de composição corporal visível tende a acontecer entre 6 e 10 semanas dependendo do ponto de partida. <span style="color:var(--ink); font-weight:500;">O que o método garante não é velocidade — é que o resultado que chega, fica.</span></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ CONHEÇA O RINALDO ═══ -->
+<section id="conheca">
+  <div class="section-header" style="border-bottom-color:rgba(240,237,230,.1);">
+    <span class="section-kicker" style="color:var(--red);">Quem está te guiando</span>
+    <div class="section-rule" style="background:rgba(240,237,230,.1);"></div>
+    <h2 class="section-title-lg sr" style="color:var(--paper);">Rinaldo Caporal</h2>
+  </div>
+  <div class="conheca-layout">
+    <div class="conheca-bio sr-l">
+      <div class="conheca-photo-wrap">
+        <img src="https://jrcaporal-cloud.github.io/curso-antropometria/projetos/assessoria-nutricional/v2/rinaldo-terno.png"
+             alt="Rinaldo Caporal" onerror="this.style.opacity='0'">
+        <div class="conheca-photo-label">Rinaldo Caporal — Nutricionista · ISAK N2</div>
+      </div>
+      <p class="conheca-bio-text">
+        Nutricionista há <strong>quase 10 anos</strong>, palestrante nos principais congressos do Brasil e professor de pós-graduação. Construí meu método atendendo tanto <strong>campeões mundiais</strong> de Jiu-Jitsu, Powerlifting e UFC quanto pessoas comuns com agenda cheia que queriam parar de improvisar com a própria saúde.<br><br>
+        Sou cofundador do <strong>Health Compass</strong> — tecnologia que uso para transformar dados semanais dos meus pacientes em decisões precisas. Não achismo. Sistema.
+      </p>
+      <div class="conheca-tags">
+        <span class="conheca-tag">CRN Alagoas</span>
+        <span class="conheca-tag">ISAK Nível 2</span>
+        <span class="conheca-tag">Nutrição Esportiva</span>
+        <span class="conheca-tag">Composição Corporal</span>
+        <span class="conheca-tag">Health Compass</span>
+        <span class="conheca-tag">Maceió · AL</span>
+      </div>
+    </div>
+    <div class="conheca-right sr">
+      <div class="conheca-block">
+        <div class="conheca-block-title">Palcos &amp; Congressos</div>
+        <div class="conheca-credential">
+          <span class="conheca-cred-year">2025</span>
+          <div class="conheca-cred-body">
+            <div class="conheca-cred-name">Congresso Nutrição Aplicada</div>
+            <div class="conheca-cred-detail">Palestrante convidado — 3º ano consecutivo · São Paulo</div>
+          </div>
+        </div>
+        <div class="conheca-credential">
+          <span class="conheca-cred-year">2025</span>
+          <div class="conheca-cred-body">
+            <div class="conheca-cred-name">Congresso Alagoano de Nutrição</div>
+            <div class="conheca-cred-detail">Palestrante · Maceió, AL</div>
+          </div>
+        </div>
+        <div class="conheca-credential">
+          <span class="conheca-cred-year">2023</span>
+          <div class="conheca-cred-body">
+            <div class="conheca-cred-name">Consciência Conference</div>
+            <div class="conheca-cred-detail">Palestrante convidado · Brasília</div>
+          </div>
+        </div>
+        <div class="conheca-credential">
+          <span class="conheca-cred-year">2022</span>
+          <div class="conheca-cred-body">
+            <div class="conheca-cred-name">Congresso Brasileiro de Nutrição</div>
+            <div class="conheca-cred-detail">Contribuição técnica · Maceió, AL</div>
+          </div>
+        </div>
+        <div class="conheca-credential">
+          <span class="conheca-cred-year">2022</span>
+          <div class="conheca-cred-body">
+            <div class="conheca-cred-name">Webdiet Conference · LANES</div>
+            <div class="conheca-cred-detail">Nutrição Esportiva · São Paulo</div>
+          </div>
+        </div>
+      </div>
+      <div class="conheca-block">
+        <div class="conheca-block-title">Docência &amp; Formação</div>
+        <div class="conheca-credential">
+          <span class="conheca-cred-year">2026</span>
+          <div class="conheca-cred-body">
+            <div class="conheca-cred-name">Pós-Graduação Nutrição Aplicada</div>
+            <div class="conheca-cred-detail">Professor titular</div>
+          </div>
+        </div>
+        <div class="conheca-credential">
+          <span class="conheca-cred-year">Atual</span>
+          <div class="conheca-cred-body">
+            <div class="conheca-cred-name">Fight and Science Academy</div>
+            <div class="conheca-cred-detail">1ª formação acadêmica mundial em nutrição para atletas de combate</div>
+          </div>
+        </div>
+        <div class="conheca-credential">
+          <span class="conheca-cred-year">Atual</span>
+          <div class="conheca-cred-body">
+            <div class="conheca-cred-name">Plenitude Educação</div>
+            <div class="conheca-cred-detail">Corpo docente — pós-graduações e extensão em alta performance</div>
+          </div>
+        </div>
+      </div>
+      <div class="conheca-block">
+        <div class="conheca-block-title">Áreas de Domínio</div>
+        <div class="conheca-expertise-grid">
+          <div class="conheca-exp-item">
+            <div class="conheca-exp-icon">🥊</div>
+            <div class="conheca-exp-title">Esportes de Combate</div>
+            <div class="conheca-exp-desc">Manipulação de peso, recuperação e performance metabólica</div>
+          </div>
+          <div class="conheca-exp-item">
+            <div class="conheca-exp-icon">🏋️</div>
+            <div class="conheca-exp-title">Força &amp; Potência</div>
+            <div class="conheca-exp-desc">Powerlifting, LPO e otimização de hipertrofia muscular</div>
+          </div>
+          <div class="conheca-exp-item">
+            <div class="conheca-exp-icon">📐</div>
+            <div class="conheca-exp-title">Antropometria ISAK N2</div>
+            <div class="conheca-exp-desc">Diagnóstico preciso de composição corporal por protocolos internacionais</div>
+          </div>
+          <div class="conheca-exp-item">
+            <div class="conheca-exp-icon">💡</div>
+            <div class="conheca-exp-title">Tecnologia Clínica</div>
+            <div class="conheca-exp-desc">Gestão de dados e raciocínio clínico via Health Compass</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- ═══ CTA ═══ -->
+<div class="cta-section">
+  <div class="cta-bg-text">RESULTADO</div>
+  <div>
+    <h2 class="cta-title sr">
+      <em>Chega de improvisar.</em>
+      VOCÊ JÁ<br>ESPEROU<br>TEMPO DEMAIS.
+    </h2>
+    <p class="cta-sub sr">Vagas abertas para novos pacientes este mês. O acompanhamento individual tem limite — quando fechar, fecha.</p>
+  </div>
+  <div class="cta-actions sr">
+    <a href="https://wa.me/5582988458845?text=Olá%20Rinaldo%2C%20quero%20garantir%20minha%20vaga" target="_blank" rel="noopener" class="cta-btn-main">Garantir minha vaga →</a>
+    <a href="#metodologia" class="cta-btn-sec">Ver metodologia primeiro</a>
+    <p class="next-step-note">Você será direcionado para o WhatsApp</p>
+  </div>
+</div>
+
+<footer>
+  <strong style="color:rgba(240,237,230,.6); letter-spacing:3px">RINALDO CAPORAL</strong>
+  <span>© 2024 — Todos os direitos reservados.</span>
+</footer>
 
 <script>
-  // Observador de Intersecção para Animações de Scroll fluidas
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('active');
+// ─── Stat Counter Animation ───
+function animateCount(el, target, suffix, duration = 1600) {
+  let start = null;
+  const step = (ts) => {
+    if (!start) start = ts;
+    const progress = Math.min((ts - start) / duration, 1);
+    const ease = 1 - Math.pow(1 - progress, 3);
+    const val = target >= 1000
+      ? Math.round(ease * target / 1000) + 'k'
+      : Math.round(ease * target);
+    el.textContent = val + suffix;
+    if (progress < 1) requestAnimationFrame(step);
+  };
+  requestAnimationFrame(step);
+}
+
+const statObs = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      const cell = e.target;
+      const numEl = cell.querySelector('.stat-n');
+      const subEl = cell.querySelector('sub');
+      const subText = subEl ? subEl.textContent : '';
+      // read data attributes
+      const target = parseFloat(cell.dataset.count);
+      const suffix = cell.dataset.suffix || '';
+      if (!isNaN(target) && numEl) {
+        numEl.textContent = '0' + subText;
+        animateCount(numEl, target, suffix);
+        // re-append sub after animation via timeout
+        setTimeout(() => {
+          const sub = document.createElement('sub');
+          sub.textContent = subText;
+          numEl.textContent = (target >= 1000 ? Math.round(target/1000)+'k' : target) + suffix;
+          numEl.appendChild(sub);
+        }, 1650);
+      }
+      statObs.unobserve(cell);
+    }
+  });
+}, { threshold: 0.6 });
+document.querySelectorAll('.stat-cell[data-count]').forEach(el => statObs.observe(el));
+
+// ─── Sticky Pricing Bar ───
+const stickyBar = document.getElementById('stickyBar');
+const stickyClose = document.getElementById('stickyBarClose');
+const stickyBarCta = document.getElementById('stickyBarCta');
+const heroSection = document.querySelector('.hero');
+let barDismissed = false;
+
+if (stickyBar && heroSection) {
+  const heroObs = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (!barDismissed) {
+        stickyBar.classList.toggle('show', !e.isIntersecting);
       }
     });
-  }, { threshold: 0.15, rootMargin: "0px 0px -50px 0px" });
+  }, { threshold: 0.1 });
+  heroObs.observe(heroSection);
 
-  document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
+  // close button dismisses permanently
+  stickyClose.addEventListener('click', () => {
+    barDismissed = true;
+    stickyBar.classList.remove('show');
+  });
+
+  // also hide when scrolled into pricing section itself
+  const pricingSection = document.getElementById('planos');
+  if (pricingSection) {
+    const pricingObs = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (e.isIntersecting) stickyBar.classList.remove('show');
+        else if (!barDismissed && window.scrollY > heroSection.offsetHeight) stickyBar.classList.add('show');
+      });
+    }, { threshold: 0.2 });
+    pricingObs.observe(pricingSection);
+  }
+}
+
+// ─── Carousel touch pause ───
+const carouselTrack = document.getElementById('carouselTrack');
+if (carouselTrack) {
+  carouselTrack.addEventListener('touchstart', () => carouselTrack.classList.add('paused'), { passive: true });
+  carouselTrack.addEventListener('touchend', () => {
+    setTimeout(() => carouselTrack.classList.remove('paused'), 800);
+  }, { passive: true });
+}
+
+
+const progressBar = document.getElementById('progress-bar');
+window.addEventListener('scroll', () => {
+  const total = document.body.scrollHeight - window.innerHeight;
+  const pct = total > 0 ? (window.scrollY / total) * 100 : 0;
+  progressBar.style.width = pct + '%';
+}, { passive: true });
+
+// ─── Cursor (desktop only) ───
+const isMouse = window.matchMedia('(hover:hover) and (pointer:fine)').matches;
+const cur = document.getElementById('cur');
+const cur2 = document.getElementById('cur2');
+if (isMouse && cur) {
+  let cx = 0, cy = 0, rx = 0, ry = 0, paused = false;
+  document.addEventListener('mousemove', e => { cx = e.clientX; cy = e.clientY; });
+  document.addEventListener('visibilitychange', () => { paused = document.hidden; });
+  (function loop() {
+    if (!paused) {
+      cur.style.left = cx + 'px'; cur.style.top = cy + 'px';
+      rx += (cx - rx) * .13; ry += (cy - ry) * .13;
+      cur2.style.left = rx + 'px'; cur2.style.top = ry + 'px';
+    }
+    requestAnimationFrame(loop);
+  })();
+  document.querySelectorAll('a,button').forEach(el => {
+    el.addEventListener('mouseenter', () => document.body.classList.add('link-hover'));
+    el.addEventListener('mouseleave', () => document.body.classList.remove('link-hover'));
+  });
+}
+
+// ─── Hamburger Menu ───
+const hamburger = document.getElementById('hamburger');
+const navMobile = document.getElementById('navMobile');
+if (hamburger) {
+  hamburger.addEventListener('click', () => {
+    const open = navMobile.classList.toggle('open');
+    hamburger.classList.toggle('open', open);
+    hamburger.setAttribute('aria-expanded', open);
+  });
+  navMobile.querySelectorAll('a').forEach(a => {
+    a.addEventListener('click', () => {
+      navMobile.classList.remove('open');
+      hamburger.classList.remove('open');
+      hamburger.setAttribute('aria-expanded', 'false');
+    });
+  });
+}
+
+// ─── Scrollspy — active nav link ───
+const sections = document.querySelectorAll('section[id], div[id]');
+const navLinks = document.querySelectorAll('.nav-links a');
+const spyObs = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      navLinks.forEach(a => a.classList.remove('active'));
+      const active = document.querySelector(`.nav-links a[href="#${e.target.id}"]`);
+      if (active) active.classList.add('active');
+    }
+  });
+}, { threshold: 0.4, rootMargin: '-52px 0px 0px 0px' });
+sections.forEach(s => spyObs.observe(s));
+
+// ─── Scroll Reveal ───
+const obs = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('vis'); obs.unobserve(e.target); } });
+}, { threshold: .1 });
+document.querySelectorAll('.sr,.sr-l').forEach(el => obs.observe(el));
+
+// ─── FAQ — dynamic height ───
+document.querySelectorAll('.faq-q').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const item = btn.closest('.faq-item');
+    const open = item.classList.contains('open');
+    // close all
+    document.querySelectorAll('.faq-item.open').forEach(i => {
+      i.classList.remove('open');
+      i.querySelector('.faq-a').style.maxHeight = '0';
+    });
+    // open clicked
+    if (!open) {
+      item.classList.add('open');
+      const ans = item.querySelector('.faq-a');
+      ans.style.maxHeight = ans.scrollHeight + 'px';
+    }
+  });
+});
 </script>
 </body>
 </html>
