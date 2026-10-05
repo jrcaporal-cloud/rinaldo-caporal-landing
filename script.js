@@ -109,11 +109,9 @@
 
   const railsReady = 'IntersectionObserver' in window;
   const athletesRail = $('#athletesRail');
-  const testisRail = $('#testisRail');
   const plansRail = $('#plansRail');
   if (railsReady) {
     if (athletesRail) initRail(athletesRail);
-    if (testisRail) initRail(testisRail);
   }
 
   /* ─── Plans: tabs synced with the swipeable cards ─── */
@@ -142,18 +140,6 @@
     const vip = $('#plano-vip');
     if (vip && !desktopMq.matches) requestAnimationFrame(() => scrollToSlide(plansRail, vip, 'auto'));
   }
-
-  /* ─── Testimonials: read more ─── */
-  $$('.testi').forEach((card) => {
-    const text = $('.testi-text', card);
-    const btn = $('.read-more', card);
-    if (!text || !btn) return;
-    btn.addEventListener('click', () => {
-      const expanded = text.classList.toggle('clamped') === false;
-      btn.setAttribute('aria-expanded', String(expanded));
-      btn.textContent = expanded ? 'Ler menos' : 'Ler mais';
-    });
-  });
 
   /* ─── Subtle lift on scroll (content is never hidden) ─── */
   if ('IntersectionObserver' in window && !reduceMotion) {
